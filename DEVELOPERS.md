@@ -13,7 +13,7 @@
 | **Node.js / TypeScript** | `omdaa-api-client` | `npm install omdaa-api-client` | [npm](https://www.npmjs.com/package/omdaa-api-client) |
 | **PHP** | `omdaa/omdaa-php` | `composer require omdaa/omdaa-php` | [Packagist](https://packagist.org/packages/omdaa/omdaa-php) |
 | **Python** | `omdaa-api-client` | `pip install omdaa-api-client` | [PyPI](https://pypi.org/project/omdaa-api-client/) |
-| **Go** | `github.com/omdaa/omdaa-go` | `go get github.com/omdaa/omdaa-go` | GitHub |
+| **Go** | `github.com/omdaa/omdaa-go` | `go get github.com/omdaa/omdaa-go` | [المصدر](https://github.com/omdaapi/omdaa-sdk/tree/main/packages/omdaa-go) |
 | **Laravel** | `omdaa/omdaa-laravel` | `composer require omdaa/omdaa-laravel` | [Packagist](https://packagist.org/packages/omdaa/omdaa-laravel) |
 
 جميع المكتبات تدعم **نفس موارد الـ API** (الرسائل، الجلسات، الويب هوكس، القوالب، المجدولة، الجماعية، جهات الاتصال، المجموعات، المحادثات، التخزين، الأمان، التدقيق، المستخدمين، البريد، الذكاء الاصطناعي، وغيرها).
@@ -100,6 +100,12 @@ Omdaa::messages()->sendText([
 3. استخدمها في رأس الطلب: `Authorization: Bearer YOUR_API_KEY`.
 
 للمساعدة والدعم: [omdaa.com](https://omdaa.com) أو قنوات الدعم الرسمية.
+
+---
+
+## 📦 مصدر الكود
+
+مصدر جميع المكتبات (بما فيها Go) في مستودع واحد: [github.com/omdaapi/omdaa-sdk](https://github.com/omdaapi/omdaa-sdk).
 
 ---
 

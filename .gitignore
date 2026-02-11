@@ -30,3 +30,6 @@ Thumbs.db
 coverage/
 .nyc_output/
 .phpunit.result.cache
+
+# Local instructions only (do not publish)
+PUSH-TO-GITHUB.txt
