@@ -1,15 +1,15 @@
 <?php
 /**
- * مثال جاهز: إرسال رسالة نصية عبر Omdaa API (PHP)
+ * Example: Send a text message via Omdaa API (PHP)
  *
- * التشغيل من جذر المستودع بعد التثبيت:
+ * Run from repo root after install:
  *   cd packages/omdaa-php && composer install && cd ../..
  *   export OMDAA_API_KEY=your-api-key
- *   export OMDAA_TO=9665XXXXXXXX   # اختياري
+ *   export OMDAA_TO=9665XXXXXXXX   # optional
  *   php examples/send-message.php
  *
- * أو من مشروعك بعد: composer require omdaa/omdaa-php
- * ثم انسخ السكربت وعدّل مسار autoload إن لزم.
+ * Or from your project after: composer require omdaa/omdaa-php
+ * Then copy this script and adjust autoload path if needed.
  */
 
 $autoloadFromRoot = __DIR__ . '/../packages/omdaa-php/vendor/autoload.php';
@@ -20,7 +20,7 @@ if (file_exists($autoloadFromRoot)) {
 } elseif (file_exists($autoloadLocal)) {
     require_once $autoloadLocal;
 } else {
-    fwrite(STDERR, "شغّل من جذر المستودع بعد: make install أو composer install داخل packages/omdaa-php\n");
+    fwrite(STDERR, "Run from repo root after: make install or composer install in packages/omdaa-php\n");
     exit(1);
 }
 
@@ -31,7 +31,7 @@ $apiKey = getenv('OMDAA_API_KEY') ?: '';
 $to     = getenv('OMDAA_TO') ?: '966500000000';
 
 if ($apiKey === '') {
-    fwrite(STDERR, "عيّن OMDAA_API_KEY ثم شغّل السكربت مرة أخرى.\n");
+    fwrite(STDERR, "Set OMDAA_API_KEY then run the script again.\n");
     exit(1);
 }
 
@@ -41,10 +41,10 @@ try {
     $result = $client->messages()->sendText([
         'sessionId' => 'default',
         'to'        => $to,
-        'message'   => 'مرحباً من Omdaa SDK (PHP)',
+        'message'   => 'Hello from Omdaa SDK (PHP)',
     ]);
-    echo 'تم الإرسال بنجاح: ', json_encode($result, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE), "\n";
+    echo 'Sent successfully: ', json_encode($result, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE), "\n";
 } catch (OmdaaException $e) {
-    fwrite(STDERR, 'خطأ من API: ' . $e->getStatusCode() . ' ' . $e->getMessage() . "\n");
+    fwrite(STDERR, 'API error: ' . $e->getStatusCode() . ' ' . $e->getMessage() . "\n");
     exit(1);
 }

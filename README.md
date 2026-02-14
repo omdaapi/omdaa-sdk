@@ -1,30 +1,32 @@
-# Omdaa API — مكتبات التكامل الرسمية
+# Omdaa API — Official SDKs
 
-> **Official SDKs** for [Omdaa](https://omdaa.com) WhatsApp Business API — Node.js · PHP · Python · Go · Laravel
+<!-- SEO: Official SDKs for Omdaa WhatsApp Business API. Egyptian platform. Full WhatsApp control, AI integration. Node.js, PHP, Python, Go, Laravel. -->
+
+> **Official SDKs** for [Omdaa](https://omdaa.com) **WhatsApp Business API** — Egyptian platform · Full WhatsApp control · AI integration · Node.js · PHP · Python · Go · Laravel
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ---
 
-## ما هي منصة Omdaa؟
+## What is Omdaa?
 
-**Omdaa** منصة **مصرية** لواجهة **WhatsApp Business API** تمنحك **تحكماً كاملاً بالواتساب** وتدعم **الربط بالذكاء الاصطناعي**. تتيح لك:
+**Omdaa** is an **Egyptian** [WhatsApp Business API](https://omdaa.com) platform that gives you **full control over WhatsApp** and supports **AI integration**. It lets you:
 
-- **تحكم كامل** بإرسال واستقبال الرسائل النصية والوسائط (صور، ملفات، تفاعلية).
-- إدارة جلسات واتساب متعددة (Multi-device)، وعرض QR للربط.
-- ضبط الويب هوكس لاستقبال الأحداث (رسائل واردة، حالة القراءة، إلخ).
-- قوالب الرسائل، الإرسال المجدول والجماعي، جهات الاتصال والمجموعات.
-- **ربط جاهز بالذكاء الاصطناعي** لتحسين الردود والتفاعل مع العملاء.
-- تكامل مع لوحة تحكم، مستخدمين، فواتير، وأمان.
+- **Full control** over sending and receiving text and media messages (images, files, interactive).
+- Manage multiple WhatsApp sessions (multi-device) and display QR for linking.
+- Configure webhooks to receive events (incoming messages, read receipts, etc.).
+- Message templates, scheduled and bulk sending, contacts and groups.
+- **Ready-made AI integration** to improve replies and customer engagement.
+- Dashboard, users, billing, and security.
 
-جميع المكتبات في هذا المستودع تستخدم **نفس واجهة الـ API** وتدعم هذه الميزات. مصدر الكود: [github.com/omdaapi/omdaa-sdk](https://github.com/omdaapi/omdaa-sdk).
+All libraries in this repo use the **same API** and support these features. Source: [github.com/omdaapi/omdaa-sdk](https://github.com/omdaapi/omdaa-sdk).
 
 ---
 
-## الحزم واللغات
+## Packages & languages
 
-| الحزمة | اللغة | التثبيت |
-|--------|--------|---------|
+| Package | Language | Install |
+|--------|----------|---------|
 | [omdaa-js](packages/omdaa-js) | Node.js / TypeScript | `npm install omdaa-api-client` |
 | [omdaa-php](packages/omdaa-php) | PHP 8.1+ | `composer require omdaa/omdaa-php` |
 | [omdaa-python](packages/omdaa-python) | Python 3.9+ | `pip install omdaa-api-client` |
@@ -33,7 +35,7 @@
 
 ---
 
-## خطوات التثبيت لكل لغة
+## Installation (per language)
 
 ### Node.js / TypeScript
 
@@ -41,8 +43,8 @@
 npm install omdaa-api-client
 ```
 
-- يتطلب **Node.js 18+**.
-- يدعم CommonJS و ESM و TypeScript.
+- Requires **Node.js 18+**.
+- Supports CommonJS, ESM, and TypeScript.
 
 ### PHP
 
@@ -50,7 +52,7 @@ npm install omdaa-api-client
 composer require omdaa/omdaa-php
 ```
 
-- يتطلب **PHP 8.1+** و **GuzzleHTTP ^7.8**.
+- Requires **PHP 8.1+** and **GuzzleHTTP ^7.8**.
 
 ### Python
 
@@ -58,13 +60,13 @@ composer require omdaa/omdaa-php
 pip install omdaa-api-client
 ```
 
-- يتطلب **Python 3.9+** و **requests >= 2.28**.
+- Requires **Python 3.9+** and **requests >= 2.28**.
 
 ---
 
-## أمثلة تشغيل جاهزة
+## Quick start examples
 
-استبدل `YOUR_API_KEY` بمفتاحك من [لوحة تحكم Omdaa](https://omdaa.com/dashboard) (API Keys)، و `9665XXXXXXXX` برقم واتساب المستلم (مع رمز الدولة بدون +).
+Replace `YOUR_API_KEY` with your key from the [Omdaa dashboard](https://omdaa.com/dashboard) (API Keys), and `9665XXXXXXXX` with the recipient WhatsApp number (country code, no +).
 
 ### Node.js
 
@@ -81,7 +83,7 @@ const client = new OmdaaClient({ apiKey: 'YOUR_API_KEY' });
     const res = await client.messages.sendText({
       sessionId: 'default',
       to: '9665XXXXXXXX',
-      message: 'مرحباً من Omdaa',
+      message: 'Hello from Omdaa',
     });
     console.log('Message sent:', res.data?.messageId);
   } catch (err) {
@@ -107,7 +109,7 @@ try {
     $result = $client->messages()->sendText([
         'sessionId' => 'default',
         'to' => '9665XXXXXXXX',
-        'message' => 'مرحباً من Omdaa',
+        'message' => 'Hello from Omdaa',
     ]);
     print_r($result);
 } catch (OmdaaException $e) {
@@ -128,7 +130,7 @@ try:
     result = client.messages.send_text({
         "sessionId": "default",
         "to": "9665XXXXXXXX",
-        "message": "مرحباً من Omdaa",
+        "message": "Hello from Omdaa",
     })
     print(result)
 except OmdaaError as e:
@@ -137,58 +139,62 @@ except OmdaaError as e:
 
 ---
 
-## تطبيقات جاهزة صغيرة (من المستودع)
+## Ready-to-run examples (from repo)
 
-يوجد في مجلد **[examples/](examples/)** سكربتات قابلة للتشغيل المباشر:
+The **[examples/](examples/)** folder contains runnable scripts:
 
-| الملف | الوصف | التشغيل |
-|-------|--------|---------|
-| [send-message.js](examples/send-message.js) | إرسال رسالة نصية (Node) | `node examples/send-message.js` |
-| [send-message.php](examples/send-message.php) | إرسال رسالة نصية (PHP) | `php examples/send-message.php` |
-| [send-message.py](examples/send-message.py) | إرسال رسالة نصية (Python) | `python3 examples/send-message.py` |
+| File | Description | Run |
+|------|-------------|-----|
+| [send-message.js](examples/send-message.js) | Send text (Node) | `node examples/send-message.js` |
+| [send-message.php](examples/send-message.php) | Send text (PHP) | `php examples/send-message.php` |
+| [send-message.py](examples/send-message.py) | Send text (Python) | `python3 examples/send-message.py` |
 
-**متطلبات التشغيل من جذر المستودع:**
+**From repo root:**
 
-1. تثبيت تبعيات الحزم (مرة واحدة):  
-   `make install`
-2. تعيين مفتاح API:  
-   `export OMDAA_API_KEY=your-api-key`
-3. (اختياري) تعيين رقم المستلم:  
-   `export OMDAA_TO=9665XXXXXXXX`
-4. تشغيل المثال حسب اللغة كما في الجدول أعلاه.
-
-تفاصيل إضافية مذكورة داخل كل ملف في `examples/`.
+1. Install deps (once): `make install`
+2. Set API key: `export OMDAA_API_KEY=your-api-key`
+3. Optional recipient: `export OMDAA_TO=9665XXXXXXXX`
+4. Run the example for your language as in the table above.
 
 ---
 
-## روابط توثيق API والمنصة
+## Links
 
-| الرابط | الوصف |
-|--------|--------|
-| [omdaa.com](https://omdaa.com) | الموقع الرسمي والتسجيل |
-| [omdaa.com/dashboard](https://omdaa.com/dashboard) | لوحة التحكم واستخراج API Key |
-| [توثيق API](https://omdaa.com/docs) | توثيق نقاط نهاية الـ API (إن وُجد على الموقع) |
-| [المستودع (المصدر)](https://github.com/omdaapi/omdaa-sdk) | كود المكتبات والتحديثات |
-
-> إذا كان رابط التوثيق مختلفاً على موقعكم (مثلاً `/api-docs` أو `/documentation`)، حدّث الرابط أعلاه في هذا الملف.
+| Link | Description |
+|------|-------------|
+| [omdaa.com](https://omdaa.com) | Website & signup |
+| [omdaa.com/dashboard](https://omdaa.com/dashboard) | Dashboard & API key |
+| [API docs](https://omdaa.com/docs) | API reference (if available on site) |
+| [This repo](https://github.com/omdaapi/omdaa-sdk) | Source code |
 
 ---
 
-## تشغيل الاختبارات من جذر المستودع
+## Tests (from repo root)
 
 ```bash
-make install   # مرة واحدة
-make test      # اختبارات JS + PHP + Python
+make install   # once
+make test      # JS + PHP + Python
 ```
 
-أو لكل لغة على حدة: `make test-js` ، `make test-php` ، `make test-python`.
+Or per language: `make test-js`, `make test-php`, `make test-python`.
 
 ---
 
-## للمطورين
+## For developers
 
-- **[DEVELOPERS.md](DEVELOPERS.md)** — اللغات، أمثلة سريعة، ومميزات المنصة للمطورين.
+- **[DEVELOPERS.md](DEVELOPERS.md)** — Languages, quick examples, platform features.
 
 ---
 
-<div align="center"><strong>صُنع للمطورين · Omdaa WhatsApp Business API</strong></div>
+## GitHub SEO
+
+- **About → Description:**  
+  `Official SDK for Omdaa WhatsApp Business API (Egypt). Node.js, PHP, Python, Go, Laravel. Full WhatsApp control & AI integration.`
+- **About → Website:** `https://omdaa.com`
+- **Topics:** `whatsapp`, `whatsapp-api`, `omdaa`, `sdk`, `egypt`, `nodejs`, `php`, `python`, `laravel`, `api-client`, `typescript`
+
+See [.github/DESCRIPTION.txt](.github/DESCRIPTION.txt) and [.github/TOPICS.txt](.github/TOPICS.txt) for copy-paste.
+
+---
+
+<div align="center"><strong>Omdaa WhatsApp Business API · Egyptian platform</strong></div>

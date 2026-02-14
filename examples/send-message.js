@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 /**
- * مثال جاهز: إرسال رسالة نصية عبر Omdaa API (Node.js)
+ * Example: Send a text message via Omdaa API (Node.js)
  *
- * التشغيل من جذر المستودع بعد التثبيت والبناء:
- *   make install   (أو: cd packages/omdaa-js && npm install && npm run build)
+ * Run from repo root after install & build:
+ *   make install   (or: cd packages/omdaa-js && npm install && npm run build)
  *   export OMDAA_API_KEY=your-api-key
- *   export OMDAA_TO=9665XXXXXXXX   # اختياري
+ *   export OMDAA_TO=9665XXXXXXXX   # optional
  *   node examples/send-message.js
  *
- * أو من مشروعك بعد: npm install omdaa-api-client
+ * Or from your project after: npm install omdaa-api-client
  */
 
 const path = require('path');
@@ -24,7 +24,7 @@ const apiKey = process.env.OMDAA_API_KEY;
 const to = process.env.OMDAA_TO || '966500000000';
 
 if (!apiKey) {
-  console.error('عيّن OMDAA_API_KEY ثم شغّل السكربت مرة أخرى.');
+  console.error('Set OMDAA_API_KEY then run the script again.');
   process.exit(1);
 }
 
@@ -35,12 +35,12 @@ async function main() {
     const res = await client.messages.sendText({
       sessionId: 'default',
       to,
-      message: 'مرحباً من Omdaa SDK (Node.js)',
+      message: 'Hello from Omdaa SDK (Node.js)',
     });
-    console.log('تم الإرسال بنجاح:', res.data?.messageId || res);
+    console.log('Sent successfully:', res.data?.messageId || res);
   } catch (err) {
     if (err instanceof OmdaaError) {
-      console.error('خطأ من API:', err.status, err.message);
+      console.error('API error:', err.status, err.message);
     } else {
       console.error(err);
     }

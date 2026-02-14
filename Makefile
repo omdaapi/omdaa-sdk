@@ -1,33 +1,33 @@
-# Omdaa SDK - تشغيل الاختبارات والبناء من الجذر
-# استخدم: make test | make test-js | make test-php | make test-python | make build
+# Omdaa SDK - Run tests and build from repo root
+# Usage: make test | make test-js | make test-php | make test-python | make build
 
 .PHONY: test test-js test-php test-python build install
 
 test: test-js test-php test-python
 	@echo ""
-	@echo "✅ جميع الاختبارات نجحت (JS + PHP + Python)"
+	@echo "All tests passed (JS + PHP + Python)"
 
 test-js:
-	@echo "▶ تشغيل اختبارات JavaScript/TypeScript..."
+	@echo "Running JavaScript/TypeScript tests..."
 	@cd packages/omdaa-js && npm test
 
 test-php:
-	@echo "▶ تشغيل اختبارات PHP..."
+	@echo "Running PHP tests..."
 	@cd packages/omdaa-php && COMPOSER_ALLOW_SUPERUSER=1 composer test
 
 test-python:
-	@echo "▶ تشغيل اختبارات Python..."
+	@echo "Running Python tests..."
 	@cd packages/omdaa-python && python3 -m pytest tests/ -v
 
 build: build-js
-	@echo "✅ البناء اكتمل"
+	@echo "Build complete"
 
 build-js:
-	@echo "▶ بناء حزمة omdaa-js..."
+	@echo "Building omdaa-js..."
 	@cd packages/omdaa-js && npm run build
 
 install: install-js build-js install-php install-python install-root
-	@echo "✅ تثبيت تبعيات جميع الحزم اكتمل"
+	@echo "All package dependencies installed"
 
 install-js:
 	@cd packages/omdaa-js && npm install

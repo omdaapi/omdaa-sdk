@@ -1,26 +1,26 @@
-# 👩‍💻 للمطورين — Omdaa API
+# For developers — Omdaa API
 
-صفحة موجهة للمطورين: اللغات المدعومة، المكتبات الرسمية، ومميزات المنصة.
+Developer-focused: supported languages, official libraries, and platform features.
 
 ---
 
-## 🛠 اللغات والمكتبات الرسمية
+## Languages & official libraries
 
-يمكنك التكامل مع Omdaa API بلغتك المفضلة عبر مكتبات جاهزة أو عبر HTTP مباشرة.
+Integrate with Omdaa API in your preferred language via ready-made libraries or direct HTTP.
 
-| اللغة / الإطار | الحزمة | التثبيت | الرابط |
-|----------------|--------|---------|--------|
+| Language / framework | Package | Install | Link |
+|---------------------|---------|---------|------|
 | **Node.js / TypeScript** | `omdaa-api-client` | `npm install omdaa-api-client` | [npm](https://www.npmjs.com/package/omdaa-api-client) |
 | **PHP** | `omdaa/omdaa-php` | `composer require omdaa/omdaa-php` | [Packagist](https://packagist.org/packages/omdaa/omdaa-php) |
 | **Python** | `omdaa-api-client` | `pip install omdaa-api-client` | [PyPI](https://pypi.org/project/omdaa-api-client/) |
-| **Go** | `github.com/omdaa/omdaa-go` | `go get github.com/omdaa/omdaa-go` | [المصدر](https://github.com/omdaapi/omdaa-sdk/tree/main/packages/omdaa-go) |
+| **Go** | `github.com/omdaa/omdaa-go` | `go get github.com/omdaa/omdaa-go` | [Source](https://github.com/omdaapi/omdaa-sdk/tree/main/packages/omdaa-go) |
 | **Laravel** | `omdaa/omdaa-laravel` | `composer require omdaa/omdaa-laravel` | [Packagist](https://packagist.org/packages/omdaa/omdaa-laravel) |
 
-جميع المكتبات تدعم **نفس موارد الـ API** (الرسائل، الجلسات، الويب هوكس، القوالب، المجدولة، الجماعية، جهات الاتصال، المجموعات، المحادثات، التخزين، الأمان، التدقيق، المستخدمين، البريد، الذكاء الاصطناعي، وغيرها).
+All libraries support the **same API resources** (messages, sessions, webhooks, templates, scheduled, bulk, contacts, groups, chats, storage, security, audit, users, email, AI, and more).
 
 ---
 
-## ⚡ أمثلة سريعة
+## Quick examples
 
 ### Node.js / TypeScript
 ```js
@@ -29,7 +29,7 @@ const client = new OmdaaClient({ apiKey: 'YOUR_API_KEY' });
 const res = await client.messages.sendText({
   sessionId: 'default',
   to: '966xxxxxxxxx',
-  message: 'مرحباً من Omdaa',
+  message: 'Hello from Omdaa',
 });
 ```
 
@@ -41,7 +41,7 @@ $client = new OmdaaClient('YOUR_API_KEY');
 $client->messages()->sendText([
   'sessionId' => 'default',
   'to' => '966xxxxxxxxx',
-  'message' => 'مرحباً من Omdaa',
+  'message' => 'Hello from Omdaa',
 ]);
 ```
 
@@ -52,7 +52,7 @@ client = OmdaaClient("YOUR_API_KEY")
 client.messages.send_text({
   "sessionId": "default",
   "to": "966xxxxxxxxx",
-  "message": "مرحباً من Omdaa",
+  "message": "Hello from Omdaa",
 })
 ```
 
@@ -64,7 +64,7 @@ client := omdaa.NewOmdaaClient("YOUR_API_KEY", "")
 client.Messages.SendText(map[string]interface{}{
   "sessionId": "default",
   "to":        "966xxxxxxxxx",
-  "message":   "مرحباً من Omdaa",
+  "message":   "Hello from Omdaa",
 })
 ```
 
@@ -74,39 +74,39 @@ use Omdaa;
 Omdaa::messages()->sendText([
   'sessionId' => 'default',
   'to' => '966xxxxxxxxx',
-  'message' => 'مرحباً من Omdaa',
+  'message' => 'Hello from Omdaa',
 ]);
 ```
 
 ---
 
-## 🌟 مميزات المنصة للمطورين
+## Platform features for developers
 
-| الميزة | الوصف |
-|--------|--------|
-| **واجهة REST موحدة** | نفس المسارات والاستجابات لجميع اللغات؛ توثيق واضح وسهل التكامل. |
-| **مصادقة بسيطة** | Bearer API Key من لوحة التحكم؛ اختياريًا JWT للمناطق المحمية. |
-| **موارد API شاملة** | رسائل (نص، صورة، ملف، تفاعلية، قوائم، أزرار، استطلاعات)، جلسات، ويب هوكس، قوالب، رسائل مجدولة وجماعية، جهات اتصال، مجموعات، محادثات، تخزين، تكاملات، طوابير، أمان، تدقيق، بريد، ذكاء اصطناعي، وغيرها. |
-| **ويب هوكس (Webhooks)** | استقبال الأحداث فورًا (رسائل واردة، حالة الجلسة، إلخ) دون استعلام متكرر. |
-| **جدولة ورسائل جماعية** | إرسال مؤجل وطلبات جماعية مع طوابير وإدارة حالة. |
-| **دعم متعدد اللغات** | مكتبات رسمية لـ Node و PHP و Python و Go و Laravel؛ يمكنك أيضًا استخدام HTTP مباشرة من أي لغة. |
-
----
-
-## 🔑 الحصول على API Key
-
-1. سجّل دخولك إلى [لوحة تحكم Omdaa](https://omdaa.com/dashboard).
-2. من الإعدادات أو قسم API أنشئ **API Key**.
-3. استخدمها في رأس الطلب: `Authorization: Bearer YOUR_API_KEY`.
-
-للمساعدة والدعم: [omdaa.com](https://omdaa.com) أو قنوات الدعم الرسمية.
+| Feature | Description |
+|--------|-------------|
+| **Unified REST API** | Same paths and responses across all languages; clear docs and easy integration. |
+| **Simple auth** | Bearer API Key from dashboard; optional JWT for protected areas. |
+| **Full API coverage** | Messages (text, image, file, interactive, lists, buttons, polls), sessions, webhooks, templates, scheduled & bulk, contacts, groups, chats, storage, integrations, queues, security, audit, email, AI, and more. |
+| **Webhooks** | Receive events in real time (incoming messages, session status, etc.) without polling. |
+| **Scheduling & bulk** | Delayed send and bulk requests with queues and status. |
+| **Multi-language SDKs** | Official libraries for Node, PHP, Python, Go, Laravel; you can also use raw HTTP from any language. |
 
 ---
 
-## 📦 مصدر الكود
+## Getting an API key
 
-مصدر جميع المكتبات (بما فيها Go) في مستودع واحد: [github.com/omdaapi/omdaa-sdk](https://github.com/omdaapi/omdaa-sdk).
+1. Log in to the [Omdaa dashboard](https://omdaa.com/dashboard).
+2. From Settings or the API section, create an **API Key**.
+3. Use it in the request header: `Authorization: Bearer YOUR_API_KEY`.
+
+For help and support: [omdaa.com](https://omdaa.com) or official support channels.
 
 ---
 
-<div align="center">**صُنع بـ ❤️ للمطورين**</div>
+## Source code
+
+All libraries (including Go) live in a single repo: [github.com/omdaapi/omdaa-sdk](https://github.com/omdaapi/omdaa-sdk).
+
+---
+
+<div align="center">**Built for developers**</div>

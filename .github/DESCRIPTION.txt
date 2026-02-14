@@ -1,0 +1,1 @@
+Official SDK for Omdaa WhatsApp Business API (Egypt). Node.js, PHP, Python, Go, Laravel. Full WhatsApp control & AI integration.
