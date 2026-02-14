@@ -30,7 +30,7 @@
     "sdk"
   ],
   "author": "Omdaa",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/omdaapi/omdaa-sdk.git"

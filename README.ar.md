@@ -4,7 +4,7 @@
 
 > **مكتبات رسمية (SDK)** للتكامل مع [Omdaa](https://omdaa.com) — منصة **مصرية** لواجهة **WhatsApp Business API** · تحكم كامل بالواتساب · ربط الذكاء الاصطناعي · Node.js · PHP · Python · Go · Laravel
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 
 **English:** [Full documentation in English](README.md) · **بدء سريع:** [docs/QUICKSTART-AR.md](docs/QUICKSTART-AR.md)
 
