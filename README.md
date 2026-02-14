@@ -1,8 +1,10 @@
 # Omdaa API — Official SDKs
 
-<!-- SEO: Official SDKs for Omdaa WhatsApp Business API. Egyptian platform. Full WhatsApp control, AI integration. Node.js, PHP, Python, Go, Laravel. -->
+<!-- SEO: Official SDKs for Omdaa WhatsApp Business API. Send WhatsApp messages, manage sessions, webhooks. Egyptian platform. Full WhatsApp control, AI integration. Node.js, PHP, Python, Go, Laravel. -->
 
 > **Official SDKs** for [Omdaa](https://omdaa.com) **WhatsApp Business API** — Egyptian platform · Full WhatsApp control · AI integration · Node.js · PHP · Python · Go · Laravel
+
+**العربية:** [الشرح الكامل بالعربية (Arabic documentation)](README.ar.md) · **Quick start (AR):** [docs/QUICKSTART-AR.md](docs/QUICKSTART-AR.md)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
@@ -10,7 +12,7 @@
 
 ## What is Omdaa?
 
-**Omdaa** is an **Egyptian** [WhatsApp Business API](https://omdaa.com) platform that gives you **full control over WhatsApp** and supports **AI integration**. It lets you:
+**Omdaa** is an **Egyptian** [WhatsApp Business API](https://omdaa.com) platform for **sending and receiving WhatsApp messages**, with **full control** and **AI integration**. Use it to build WhatsApp bots, notifications, and customer support. It lets you:
 
 - **Full control** over sending and receiving text and media messages (images, files, interactive).
 - Manage multiple WhatsApp sessions (multi-device) and display QR for linking.
@@ -158,6 +160,14 @@ The **[examples/](examples/)** folder contains runnable scripts:
 
 ---
 
+## Documentation
+
+| Link | Description |
+|------|-------------|
+| [README (this file)](README.md) | Full docs in English |
+| [README.ar.md](README.ar.md) | Full docs in **Arabic** (الشرح بالعربية) |
+| [docs/QUICKSTART-AR.md](docs/QUICKSTART-AR.md) | Quick start in **Arabic** (البدء السريع) |
+
 ## Links
 
 | Link | Description |
@@ -193,7 +203,7 @@ Or per language: `make test-js`, `make test-php`, `make test-python`.
 - **About → Website:** `https://omdaa.com`
 - **Topics:** `whatsapp`, `whatsapp-api`, `omdaa`, `sdk`, `egypt`, `nodejs`, `php`, `python`, `laravel`, `api-client`, `typescript`
 
-See [.github/DESCRIPTION.txt](.github/DESCRIPTION.txt) and [.github/TOPICS.txt](.github/TOPICS.txt) for copy-paste.
+See [.github/DESCRIPTION.txt](.github/DESCRIPTION.txt) (EN), [.github/DESCRIPTION-AR.txt](.github/DESCRIPTION-AR.txt) (AR), and [.github/TOPICS.txt](.github/TOPICS.txt) for copy-paste.
 
 ---
 
