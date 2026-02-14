@@ -21,6 +21,9 @@
       "Omdaa\\Api\\Tests\\": "tests/"
     }
   },
-  "minimum-stability": "stable",
-  "keywords": ["omdaa", "whatsapp", "api", "client", "sdk"]
+"scripts": {
+        "test": "phpunit"
+    },
+    "minimum-stability": "stable",
+    "keywords": ["omdaa", "whatsapp", "api", "client", "sdk"]
 }

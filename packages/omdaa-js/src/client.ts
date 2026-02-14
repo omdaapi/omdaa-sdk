@@ -95,6 +95,11 @@ export class OmdaaClient {
     return this.request<T>({ method: 'PUT', path, body });
   }
 
+  /** PATCH request helper */
+  patch<T>(path: string, body?: unknown) {
+    return this.request<T>({ method: 'PATCH', path, body });
+  }
+
   /** DELETE request helper */
   delete<T>(path: string, body?: unknown) {
     return this.request<T>({ method: 'DELETE', path, body });

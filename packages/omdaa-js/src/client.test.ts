@@ -61,6 +61,24 @@ describe('OmdaaClient', () => {
       );
     });
 
+    it('sends PATCH with body', async () => {
+      const mockFetch = vi.fn().mockResolvedValue({
+        ok: true,
+        status: 200,
+        text: () => Promise.resolve(JSON.stringify({ success: true, data: { updated: true } })),
+      });
+      vi.stubGlobal('fetch', mockFetch);
+
+      const client = new OmdaaClient({ apiKey, baseURL });
+      await client.patch('/settings/profile', { name: 'New Name' });
+
+      expect(mockFetch).toHaveBeenCalledTimes(1);
+      const [url, init] = mockFetch.mock.calls[0];
+      expect(url).toBe(baseURL + '/settings/profile');
+      expect(init?.method).toBe('PATCH');
+      expect(init?.body).toBe(JSON.stringify({ name: 'New Name' }));
+    });
+
     it('appends search params to URL for GET', async () => {
       const mockFetch = vi.fn().mockResolvedValue({
         ok: true,
@@ -108,6 +126,49 @@ describe('OmdaaClient', () => {
 
       const [url] = mockFetch.mock.calls[0];
       expect(url).toMatch(/^https:\/\/omdaa\.com\/api\/v1\/health/);
+    });
+
+    it('throws OmdaaError with message from body when response is non-JSON', async () => {
+      const mockFetch = vi.fn().mockResolvedValue({
+        ok: false,
+        status: 502,
+        text: () => Promise.resolve('<html>Bad Gateway</html>'),
+      });
+      vi.stubGlobal('fetch', mockFetch);
+
+      const client = new OmdaaClient({ apiKey, baseURL });
+
+      await expect(client.get('/sessions')).rejects.toThrow(OmdaaError);
+      await expect(client.get('/sessions')).rejects.toMatchObject({
+        message: '<html>Bad Gateway</html>',
+        status: 502,
+      });
+    });
+
+    it('returns success: false when response is OK but body is non-JSON', async () => {
+      const mockFetch = vi.fn().mockResolvedValue({
+        ok: true,
+        status: 200,
+        text: () => Promise.resolve('plain text'),
+      });
+      vi.stubGlobal('fetch', mockFetch);
+
+      const client = new OmdaaClient({ apiKey, baseURL });
+      const res = await client.get('/sessions');
+
+      expect(res.success).toBe(false);
+      expect(res.message).toBe('plain text');
+    });
+
+    it('propagates network/fetch errors (e.g. connection refused)', async () => {
+      const networkError = new TypeError('fetch failed');
+      const mockFetch = vi.fn().mockRejectedValue(networkError);
+      vi.stubGlobal('fetch', mockFetch);
+
+      const client = new OmdaaClient({ apiKey, baseURL });
+
+      await expect(client.get('/sessions')).rejects.toThrow('fetch failed');
+      await expect(client.get('/sessions')).rejects.toBe(networkError);
     });
   });
 });

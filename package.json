@@ -1,0 +1,13 @@
+{
+  "name": "omdaa-sdk",
+  "private": true,
+  "description": "Omdaa API — Official SDKs monorepo",
+  "scripts": {
+    "example:node": "node examples/send-message.js",
+    "test": "make test",
+    "install:all": "make install"
+  },
+  "devDependencies": {
+    "omdaa-api-client": "file:packages/omdaa-js"
+  }
+}

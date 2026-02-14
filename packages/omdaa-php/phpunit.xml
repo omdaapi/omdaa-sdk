@@ -16,11 +16,5 @@
         <exclude>
             <directory>tests</directory>
         </exclude>
-        <coverage>
-            <report>
-                <clover outputFile="build/clover.xml"/>
-                <text outputFile="php://stdout" showUncoveredFiles="false"/>
-            </report>
-        </coverage>
     </source>
 </phpunit>

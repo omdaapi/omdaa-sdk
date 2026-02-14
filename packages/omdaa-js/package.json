@@ -33,7 +33,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/omdaa/omdaa-project-full.git"
+    "url": "git+https://github.com/omdaapi/omdaa-sdk.git"
   },
   "devDependencies": {
     "tsup": "^8.0.1",
