@@ -1,0 +1,56 @@
+# Dependabot: keep npm, Composer, and pip dependencies up to date
+# https://docs.github.com/en/code-security/dependabot
+
+version: 2
+updates:
+  # npm - root and omdaa-js
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "deps(npm)"
+
+  - package-ecosystem: "npm"
+    directory: "/packages/omdaa-js"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "deps(omdaa-js)"
+
+  # Composer - PHP packages
+  - package-ecosystem: "composer"
+    directory: "/packages/omdaa-php"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "deps(omdaa-php)"
+
+  - package-ecosystem: "composer"
+    directory: "/packages/omdaa-laravel"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "deps(omdaa-laravel)"
+
+  # pip - Python
+  - package-ecosystem: "pip"
+    directory: "/packages/omdaa-python"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "deps(omdaa-python)"
+
+  # Go modules
+  - package-ecosystem: "gomod"
+    directory: "/packages/omdaa-go"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "deps(omdaa-go)"

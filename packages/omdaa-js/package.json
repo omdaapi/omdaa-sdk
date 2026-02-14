@@ -20,7 +20,8 @@
     "build": "tsup",
     "dev": "tsup --watch",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
   },
   "keywords": [
     "omdaa",
@@ -36,6 +37,7 @@
     "url": "git+https://github.com/omdaapi/omdaa-sdk.git"
   },
   "devDependencies": {
+    "@vitest/coverage-v8": "^4.0.18",
     "tsup": "^8.0.1",
     "typescript": "^5.3.3",
     "vitest": "^4.0.0"

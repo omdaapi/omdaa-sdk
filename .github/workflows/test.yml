@@ -1,0 +1,71 @@
+name: Test
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+    branches: [main, master]
+
+jobs:
+  test-js:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+          cache-dependency-path: packages/omdaa-js/package-lock.json
+      - run: cd packages/omdaa-js && npm ci && npm run build && npm test
+      - run: cd packages/omdaa-js && npm run test:coverage
+
+  test-php:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+      - run: cd packages/omdaa-php && composer install --no-interaction && composer test
+
+  test-python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - run: cd packages/omdaa-python && pip install -e ".[dev]" && python -m pytest tests/ -v
+
+  test-go:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.21'
+      - run: cd packages/omdaa-go && go test ./...
+
+  examples-smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.1'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+      - name: Install deps
+        run: |
+          cd packages/omdaa-js && npm ci && npm run build
+          cd ../omdaa-php && composer install --no-interaction
+          cd ../omdaa-python && pip install -e ".[dev]" --quiet
+      - name: Run examples (expect exit 1 when no API key)
+        run: |
+          (node examples/send-message.js 2>&1; test $? -eq 1) || exit 1
+          (php examples/send-message.php 2>&1; test $? -eq 1) || exit 1
+          (python3 examples/send-message.py 2>&1; test $? -eq 1) || exit 1

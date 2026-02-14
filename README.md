@@ -167,6 +167,7 @@ The **[examples/](examples/)** folder contains runnable scripts:
 | [README (this file)](README.md) | Full docs in English |
 | [README.ar.md](README.ar.md) | Full docs in **Arabic** (الشرح بالعربية) |
 | [docs/QUICKSTART-AR.md](docs/QUICKSTART-AR.md) | Quick start in **Arabic** (البدء السريع) |
+| [CHANGELOG.md](CHANGELOG.md) | Version history and release notes |
 
 ## Links
 
@@ -183,10 +184,11 @@ The **[examples/](examples/)** folder contains runnable scripts:
 
 ```bash
 make install   # once
-make test      # JS + PHP + Python
+make test      # JS + PHP + Python + Go
 ```
 
-Or per language: `make test-js`, `make test-php`, `make test-python`.
+Or per language: `make test-js`, `make test-php`, `make test-python`, `make test-go`.  
+JS coverage: `cd packages/omdaa-js && npm run test:coverage`.
 
 ---
 

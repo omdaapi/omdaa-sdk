@@ -1,11 +1,11 @@
 # Omdaa SDK - Run tests and build from repo root
-# Usage: make test | make test-js | make test-php | make test-python | make build
+# Usage: make test | make test-js | make test-php | make test-python | make test-go | make build
 
-.PHONY: test test-js test-php test-python build install
+.PHONY: test test-js test-php test-python test-go build install
 
-test: test-js test-php test-python
+test: test-js test-php test-python test-go
 	@echo ""
-	@echo "All tests passed (JS + PHP + Python)"
+	@echo "All tests passed (JS + PHP + Python + Go)"
 
 test-js:
 	@echo "Running JavaScript/TypeScript tests..."
@@ -18,6 +18,10 @@ test-php:
 test-python:
 	@echo "Running Python tests..."
 	@cd packages/omdaa-python && python3 -m pytest tests/ -v
+
+test-go:
+	@echo "Running Go tests..."
+	@cd packages/omdaa-go && go test ./...
 
 build: build-js
 	@echo "Build complete"
