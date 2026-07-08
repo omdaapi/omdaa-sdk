@@ -1,16 +1,16 @@
 ---
-description: Use Omdaa WhatsApp MCP tools for messaging automation
+description: Use Omdaa WhatsApp MCP v1.2 tools for messaging automation
 globs:
 alwaysApply: false
 ---
 
 # Omdaa WhatsApp MCP
 
-When the user asks about WhatsApp messaging, sessions, number checks, or webhooks:
+When the user asks about WhatsApp messaging, sessions, QR linking, media, buttons, number checks, or webhooks:
 
-1. Use the `omdaa` MCP server (requires API key from https://omdaa.com/dashboard/api-keys).
-2. Available tools: `list_sessions`, `get_session_status`, `send_text_message`, `check_whatsapp_number`, `get_webhook_config`, `get_health`.
-3. For `send_text_message` and `check_whatsapp_number`, a connected `sessionId` is required (scan QR in dashboard first).
+1. Use the `omdaa` MCP server with `Authorization: Bearer YOUR_API_KEY` (get key from https://omdaa.com/dashboard/api-keys).
+2. Available tools (v1.2): `list_sessions`, `create_session`, `get_qr`, `get_session_status`, `send_text_message`, `send_media`, `send_buttons`, `check_whatsapp_number`, `get_webhook_config`, `get_health`.
+3. For sending messages, a connected `sessionId` is required — use `create_session` + `get_qr` or dashboard QR scan first.
 4. Omdaa API is **free forever** — docs: https://omdaa.net/guides/mcp-en.html · landing: https://omdaa.com/mcp
 
-Never invent API keys. If missing, direct the user to create one at https://omdaa.com/dashboard/api-keys.
+Never invent API keys. Never put secrets in URLs. If missing, direct the user to create one at https://omdaa.com/dashboard/api-keys.

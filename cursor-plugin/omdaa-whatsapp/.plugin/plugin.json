@@ -1,7 +1,7 @@
 {
   "name": "omdaa-whatsapp",
-  "version": "1.0.1",
-  "description": "Free forever WhatsApp MCP for Cursor — send messages, verify numbers, list sessions, and manage webhooks via Omdaa API.",
+  "version": "1.2.0",
+  "description": "Free forever WhatsApp MCP for Cursor — sessions, QR, text/media/buttons, number check, webhooks. Secure Bearer auth via Omdaa API.",
   "author": {
     "name": "Omdaa API",
     "email": "info@omdaa.net",
@@ -11,7 +11,7 @@
   "repository": "https://github.com/omdaapi/omdaa-sdk",
   "license": "MIT",
   "logo": "assets/logo-marketplace-512.png",
-  "keywords": ["whatsapp", "mcp", "omdaa", "cursor", "free", "wassenger"],
+  "keywords": ["whatsapp", "mcp", "omdaa", "cursor", "free", "wassenger", "media", "buttons"],
   "skills": "./skills/",
   "rules": "./rules/",
   "mcpServers": "./mcp.json"

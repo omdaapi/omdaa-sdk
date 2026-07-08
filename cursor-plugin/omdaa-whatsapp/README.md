@@ -1,8 +1,8 @@
 # Omdaa WhatsApp MCP — Cursor Plugin
 
-Free forever WhatsApp MCP server for [Cursor](https://cursor.com). Connect WhatsApp to your AI assistant: send messages, verify numbers, list sessions, and read webhook config.
+Free forever WhatsApp MCP server for [Cursor](https://cursor.com). Connect WhatsApp to your AI assistant: create sessions, scan QR, send text/media/buttons, verify numbers, and manage webhooks.
 
-**Wassenger MCP alternative** — no Enterprise plan required.
+**Wassenger MCP alternative** — no Enterprise plan required · **MCP v1.2.0** · **10 tools** · **Secure Bearer auth**
 
 | Resource | Link |
 |----------|------|
@@ -17,16 +17,17 @@ Free forever WhatsApp MCP server for [Cursor](https://cursor.com). Connect Whats
 ## Install (recommended)
 
 1. Open **[omdaa-api on Cursor Directory](https://cursor.directory/plugins/omdaa-api)** → **Add to Cursor**.
-2. Or one-click MCP install:
+2. Or one-click MCP install (uses `Authorization` header — not `?key=` in URL):
 
-[![Add to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](cursor://anysphere.cursor-deeplink/mcp/install?name=Omdaa%20WhatsApp&config=eyJ0eXBlIjoiaHR0cCIsInVybCI6Imh0dHBzOi8vb21kYWEuY29tL2FwaS92MS9tY3A_a2V5PVlPVVJfQVBJX0tFWSJ9)
+[![Add to Cursor](https://cursor.com/deeplink/mcp-install-dark.svg)](cursor://anysphere.cursor-deeplink/mcp/install?name=Omdaa%20WhatsApp&config=eyJ0eXBlIjoiaHR0cCIsInVybCI6Imh0dHBzOi8vb21kYWEuY29tL2FwaS92MS9tY3AiLCJoZWFkZXJzIjp7IkF1dGhvcml6YXRpb24iOiJCZWFyZXIgJHtlbnY6T01EQUFfQVBJX0tFWX0ifX0=)
 
-3. Replace `YOUR_API_KEY` in Cursor MCP settings with a key from [dashboard/api-keys](https://omdaa.com/dashboard/api-keys).
-4. Connect a WhatsApp session (scan QR in [dashboard/sessions](https://omdaa.com/dashboard/sessions)).
+3. Set `OMDAA_API_KEY` in your environment, or paste your key in `headers.Authorization` in Cursor MCP settings.
+4. Get API key from [dashboard/api-keys](https://omdaa.com/dashboard/api-keys).
+5. Connect WhatsApp: use `create_session` + `get_qr` from MCP, or scan QR in [dashboard/sessions](https://omdaa.com/dashboard/sessions).
 
 ## Manual install
 
-Add to Cursor `mcp.json` (recommended — key in header, not URL):
+Add to Cursor `mcp.json`:
 
 ```json
 {
@@ -42,23 +43,25 @@ Add to Cursor `mcp.json` (recommended — key in header, not URL):
 }
 ```
 
-Set `OMDAA_API_KEY` in your environment, or paste `Bearer YOUR_API_KEY` directly in `headers`.
-
 ## Components (Open Plugins)
 
 | Type | Name | Description |
 |------|------|-------------|
-| MCP Server | `omdaa` | HTTP MCP → `https://omdaa.com/api/v1/mcp` |
+| MCP Server | `omdaa` | Streamable HTTP MCP → `https://omdaa.com/api/v1/mcp` |
 | Rule | `omdaa-whatsapp-mcp` | Guides the agent to use Omdaa tools correctly |
-| Skill | `send-whatsapp` | Workflow for send / verify / sessions / webhooks |
+| Skill | `send-whatsapp` | Workflow for sessions, send, media, buttons, verify |
 
-## Tools
+## Tools (v1.2.0)
 
 | Tool | Description |
 |------|-------------|
 | `list_sessions` | List WhatsApp sessions |
+| `create_session` | Create a new session |
+| `get_qr` | Get QR code to link WhatsApp |
 | `get_session_status` | Connection status for a session |
 | `send_text_message` | Send a text message |
+| `send_media` | Send image/video/audio/document (URL or base64) |
+| `send_buttons` | Send interactive buttons (up to 3) |
 | `check_whatsapp_number` | Verify if numbers are on WhatsApp |
 | `get_webhook_config` | Webhook settings for a session |
 | `get_health` | API health check |
@@ -67,7 +70,7 @@ Set `OMDAA_API_KEY` in your environment, or paste `Bearer YOUR_API_KEY` directly
 
 ```bash
 ln -s "$(pwd)" ~/.cursor/plugins/local/omdaa-whatsapp
-# Restart Cursor, then configure API key
+# Restart Cursor, then set OMDAA_API_KEY
 ```
 
 ## Publish
