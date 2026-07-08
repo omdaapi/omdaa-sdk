@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "omdaa": {
+      "type": "http",
+      "url": "https://omdaa.com/api/v1/mcp?key=YOUR_API_KEY"
+    }
+  }
+}
