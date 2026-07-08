@@ -37,5 +37,10 @@
     "client",
     "sdk"
   ],
-  "version": "1.1.1"
+  "version": "1.1.1",
+  "homepage": "https://omdaa.com",
+  "support": {
+    "issues": "https://github.com/omdaapi/omdaa-sdk/issues",
+    "source": "https://github.com/omdaapi/omdaa-sdk/tree/main/packages/omdaa-php"
+  }
 }

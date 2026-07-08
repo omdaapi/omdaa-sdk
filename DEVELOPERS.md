@@ -22,7 +22,7 @@ Developer reference: languages, libraries, MCP, n8n, and platform capabilities.
 | **Node.js / TypeScript** | `omdaa-api-client` | `npm install omdaa-api-client` |
 | **PHP 8.1+** | `omdaa/omdaa-php` | `composer require omdaa/omdaa-php` |
 | **Python 3.9+** | `omdaa-api-client` | `pip install omdaa-api-client` |
-| **Go 1.21+** | `github.com/omdaa/omdaa-go` | `go get github.com/omdaa/omdaa-go` |
+| **Go 1.21+** | `github.com/omdaapi/omdaa-sdk/packages/omdaa-go` | `go get github.com/omdaapi/omdaa-sdk/packages/omdaa-go@v1.1.1` |
 | **Laravel** | `omdaa/omdaa-laravel` | `composer require omdaa/omdaa-laravel` |
 
 All libraries expose the **same API resources**: messages, sessions, webhooks, templates, scheduled & bulk, contacts, groups, chats, storage, security, audit, users, email, AI, and more.
@@ -92,7 +92,7 @@ client.messages.send_text({
 
 ### Go
 ```go
-import "github.com/omdaa/omdaa-go"
+import omdaa "github.com/omdaapi/omdaa-sdk/packages/omdaa-go"
 
 client := omdaa.NewOmdaaClient("YOUR_API_KEY", "")
 client.Messages.SendText(map[string]interface{}{

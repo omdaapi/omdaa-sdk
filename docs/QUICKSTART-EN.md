@@ -21,7 +21,7 @@
 | Node.js | `npm install omdaa-api-client` |
 | PHP | `composer require omdaa/omdaa-php` |
 | Python | `pip install omdaa-api-client` |
-| Go | `go get github.com/omdaa/omdaa-go` |
+| Go | `go get github.com/omdaapi/omdaa-sdk/packages/omdaa-go@v1.1.1` |
 
 ---
 

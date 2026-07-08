@@ -22,7 +22,7 @@
 | **Node.js / TypeScript** | `omdaa-api-client` | `npm install omdaa-api-client` |
 | **PHP 8.1+** | `omdaa/omdaa-php` | `composer require omdaa/omdaa-php` |
 | **Python 3.9+** | `omdaa-api-client` | `pip install omdaa-api-client` |
-| **Go 1.21+** | `github.com/omdaa/omdaa-go` | `go get github.com/omdaa/omdaa-go` |
+| **Go 1.21+** | `github.com/omdaapi/omdaa-sdk/packages/omdaa-go` | `go get github.com/omdaapi/omdaa-sdk/packages/omdaa-go@v1.1.1` |
 | **Laravel** | `omdaa/omdaa-laravel` | `composer require omdaa/omdaa-laravel` |
 
 جميع المكتبات تدعم **نفس موارد API**: رسائل، جلسات، webhooks، قوالب، إرسال مجدول وجماعي، جهات اتصال، مجموعات، محادثات، تخزين، أمان، تدقيق، مستخدمين، بريد، AI، والمزيد.

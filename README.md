@@ -9,6 +9,15 @@
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
 [![Free Forever](https://img.shields.io/badge/Pricing-Free%20Forever-10B981.svg)](https://omdaa.com)
 
+### Package registry status
+
+[![npm omdaa-api-client](https://img.shields.io/npm/v/omdaa-api-client?label=npm%20JS)](https://www.npmjs.com/package/omdaa-api-client)
+[![PyPI omdaa-api-client](https://img.shields.io/pypi/v/omdaa-api-client?label=PyPI)](https://pypi.org/project/omdaa-api-client/)
+[![Packagist omdaa-php](https://img.shields.io/packagist/v/omdaa/omdaa-php?label=Packagist%20PHP)](https://packagist.org/packages/omdaa/omdaa-php)
+[![Packagist omdaa-laravel](https://img.shields.io/packagist/v/omdaa/omdaa-laravel?label=Packagist%20Laravel)](https://packagist.org/packages/omdaa/omdaa-laravel)
+[![npm n8n node](https://img.shields.io/npm/v/@omdaapi/n8n-nodes-whatsapp-omdaa?label=npm%20n8n)](https://www.npmjs.com/package/@omdaapi/n8n-nodes-whatsapp-omdaa)
+[![Go module](https://img.shields.io/github/v/tag/omdaapi/omdaa-sdk?label=Go&filter=packages/omdaa-go/*)](https://github.com/omdaapi/omdaa-sdk/tree/main/packages/omdaa-go)
+
 **العربية:** [README.ar.md](README.ar.md) · [docs/QUICKSTART-AR.md](docs/QUICKSTART-AR.md)
 
 </div>
@@ -82,7 +91,7 @@ Connect WhatsApp to **Cursor** with one click — send messages, verify numbers,
 | [omdaa-js](packages/omdaa-js) | Node.js / TypeScript | `npm install omdaa-api-client` |
 | [omdaa-php](packages/omdaa-php) | PHP 8.1+ | `composer require omdaa/omdaa-php` |
 | [omdaa-python](packages/omdaa-python) | Python 3.9+ | `pip install omdaa-api-client` |
-| [omdaa-go](packages/omdaa-go) | Go 1.21+ | `go get github.com/omdaa/omdaa-go` |
+| [omdaa-go](packages/omdaa-go) | Go 1.21+ | `go get github.com/omdaapi/omdaa-sdk/packages/omdaa-go@v1.1.1` |
 | [omdaa-laravel](packages/omdaa-laravel) | Laravel | `composer require omdaa/omdaa-laravel` |
 
 All packages share the **same REST API** — messages, sessions, webhooks, templates, scheduled & bulk send, contacts, groups, storage, AI, and more.

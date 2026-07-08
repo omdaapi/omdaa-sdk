@@ -1,11 +1,11 @@
 # omdaa-go
 
-Official Go client for the [Omdaa](https://omdaa.com) WhatsApp Business API. **Omdaa API is free forever** — unlimited sessions, messages, and Omdaa AI.
+Official Go client for the [Omdaa](https://omdaa.com) WhatsApp Business API. **Free forever** — unlimited sessions, messages, and Omdaa AI.
 
 ## Installation
 
 ```bash
-go get github.com/omdaa/omdaa-go
+go get github.com/omdaapi/omdaa-sdk/packages/omdaa-go@v1.1.1
 ```
 
 ## Quick Start
@@ -15,20 +15,12 @@ package main
 
 import (
 	"fmt"
-	"github.com/omdaa/omdaa-go"
+	omdaa "github.com/omdaapi/omdaa-sdk/packages/omdaa-go"
 )
 
 func main() {
 	client := omdaa.NewOmdaaClient("your-api-key", "")
-	// Optional base URL: omdaa.NewOmdaaClient("your-api-key", "https://omdaa.com/api/v1")
-
-	sessions, err := client.Sessions.List()
-	if err != nil {
-		if e, ok := err.(*omdaa.OmdaaError); ok {
-			fmt.Println(e.StatusCode, e.Message)
-		}
-		return
-	}
+	// Optional: omdaa.NewOmdaaClient("your-api-key", "https://omdaa.com/api/v1")
 
 	result, err := client.Messages.SendText(map[string]interface{}{
 		"sessionId": "default",
@@ -40,17 +32,12 @@ func main() {
 		return
 	}
 	fmt.Println(result)
-
-	client.Webhooks.Set(map[string]interface{}{
-		"url":     "https://yoursite.com/webhook",
-		"enabled": true,
-	})
 }
 ```
 
-## API Resources
+## Module path
 
-Same as other SDKs: `Messages`, `Sessions`, `Webhooks`, `Templates`, `Scheduled`, `Bulk`, `Contacts`, `Groups`, `Chats`, `Business`, `Storage`, `Labels`, `Integrations`, `Queue`, `Interactive`, `ApiKeys`, `Profile`, `Dashboard`, `Plans`, `Billing`, `Referral`, `Notifications`, `Metrics`, `Backup`, `Security`, `Audit`, `Organizations`, `Settings`, `Channels`, `Privacy`, `Support`, `Proxy`, `Calls`, `Auth`, `Users`, `Email`, `Ai`.
+Monorepo source: [github.com/omdaapi/omdaa-sdk](https://github.com/omdaapi/omdaa-sdk) · `packages/omdaa-go`
 
 ## Requirements
 
@@ -64,4 +51,4 @@ go test -v ./...
 
 ## License
 
-MIT
+Apache-2.0

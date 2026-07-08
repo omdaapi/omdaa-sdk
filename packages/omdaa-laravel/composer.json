@@ -3,15 +3,14 @@
   "description": "Laravel integration for Omdaa WhatsApp Business API",
   "type": "library",
   "license": "Apache-2.0",
+  "version": "1.1.1",
+  "homepage": "https://omdaa.com",
   "authors": [{ "name": "Omdaa", "homepage": "https://omdaa.com" }],
-  "repositories": [
-    { "type": "path", "url": "../omdaa-php", "options": { "symlink": true } }
-  ],
   "require": {
     "php": ">=8.1",
     "illuminate/support": "^9.0|^10.0|^11.0",
     "illuminate/config": "^9.0|^10.0|^11.0",
-    "omdaa/omdaa-php": "^1.0"
+    "omdaa/omdaa-php": "^1.1"
   },
   "autoload": {
     "psr-4": {
@@ -28,9 +27,14 @@
       }
     }
   },
+  "support": {
+    "issues": "https://github.com/omdaapi/omdaa-sdk/issues",
+    "source": "https://github.com/omdaapi/omdaa-sdk/tree/main/packages/omdaa-laravel"
+  },
   "config": {
     "sort-packages": true
   },
   "minimum-stability": "stable",
-  "prefer-stable": true
+  "prefer-stable": true,
+  "keywords": ["omdaa", "whatsapp", "laravel", "api", "sdk"]
 }
