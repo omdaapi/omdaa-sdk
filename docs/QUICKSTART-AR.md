@@ -41,7 +41,7 @@
 | الشرح الكامل (عربي) | [README.ar.md](../README.ar.md) |
 | الشرح الكامل (English) | [README.md](../README.md) |
 | مرجع المطورين | [DEVELOPERS.ar.md](../DEVELOPERS.ar.md) |
-| Cursor MCP واتساب | [omdaa.com/mcp](https://omdaa.com/mcp) |
+| Cursor MCP واتساب | [omdaa.com/mcp](https://omdaa.com/mcp) · [Cursor Directory](https://cursor.directory/plugins/omdaa-api) |
 | عقدة n8n | [GitHub](https://github.com/omdaapi/n8n-nodes-whatsapp-omdaa) |
 | التوثيق الرسمي | [omdaa.net](https://omdaa.net) |
 

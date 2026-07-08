@@ -33,10 +33,12 @@ All libraries expose the **same API resources**: messages, sessions, webhooks, t
 
 Free HTTP MCP server — alternative to paid Wassenger MCP.
 
+- **Cursor Directory:** [cursor.directory/plugins/omdaa-api](https://cursor.directory/plugins/omdaa-api) (Rule + MCP + Skill)
 - Endpoint: `POST https://omdaa.com/api/v1/mcp?key=YOUR_API_KEY`
 - Discovery: `GET https://omdaa.com/api/v1/mcp/info`
 - Plugin: [cursor-plugin/omdaa-whatsapp/](cursor-plugin/omdaa-whatsapp/)
 - Docs: [omdaa.net/guides/mcp-en.html](https://omdaa.net/guides/mcp-en.html)
+- Landing: [omdaa.com/mcp](https://omdaa.com/mcp)
 
 ---
 

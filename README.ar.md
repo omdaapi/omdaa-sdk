@@ -61,13 +61,16 @@ API الإنتاج: `https://omdaa.com/api/v1` · التوثيق: `https://omdaa
 
 | المورد | الرابط |
 |--------|--------|
+| **Cursor Directory** | [cursor.directory/plugins/omdaa-api](https://cursor.directory/plugins/omdaa-api) |
 | صفحة MCP | [omdaa.com/mcp](https://omdaa.com/mcp) |
 | دليل عربي | [omdaa.net/guides/mcp-ar.html](https://omdaa.net/guides/mcp-ar.html) |
 | دليل إنجليزي | [omdaa.net/guides/mcp-en.html](https://omdaa.net/guides/mcp-en.html) |
 | اكتشاف API | `GET /api/v1/mcp/info` |
 | مصدر الإضافة | [cursor-plugin/omdaa-whatsapp/](cursor-plugin/omdaa-whatsapp/) |
 
-**التثبيت في Cursor** — أضف إلى `mcp.json`:
+**التثبيت:** افتح [Cursor Directory → omdaa-api](https://cursor.directory/plugins/omdaa-api) → **Add to Cursor**، ثم ضع مفتاح API.
+
+**تثبيت يدوي** — أضف إلى `mcp.json`:
 
 ```json
 {

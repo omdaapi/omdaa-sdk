@@ -61,13 +61,16 @@ Connect WhatsApp to **Cursor** with one click — send messages, verify numbers,
 
 | Resource | Link |
 |----------|------|
+| **Cursor Directory** | [cursor.directory/plugins/omdaa-api](https://cursor.directory/plugins/omdaa-api) |
 | Landing page | [omdaa.com/mcp](https://omdaa.com/mcp) |
 | English guide | [omdaa.net/guides/mcp-en.html](https://omdaa.net/guides/mcp-en.html) |
 | Arabic guide | [omdaa.net/guides/mcp-ar.html](https://omdaa.net/guides/mcp-ar.html) |
 | API discovery | `GET /api/v1/mcp/info` |
 | Plugin source | [cursor-plugin/omdaa-whatsapp/](cursor-plugin/omdaa-whatsapp/) |
 
-**Install in Cursor** — add to `mcp.json`:
+**Install:** open [Cursor Directory → omdaa-api](https://cursor.directory/plugins/omdaa-api) → **Add to Cursor**, then set your API key.
+
+**Manual install** — add to `mcp.json`:
 
 ```json
 {

@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **Cursor Directory listing:** [cursor.directory/plugins/omdaa-api](https://cursor.directory/plugins/omdaa-api) (Rule + MCP Server + Skill).
+- Cursor plugin Open Plugins layout: `.mcp.json`, `.plugin/plugin.json`, `send-whatsapp` skill, marketplace logo assets.
+- README / DEVELOPERS / QUICKSTART updated with Directory + Marketplace install links.
 - Registry status badges in README.md / README.ar.md (npm, PyPI, Packagist, Go, n8n).
 - Publish scripts: `publish-python-pypi.sh`, `push-omdaa-php-github.sh`, `push-omdaa-laravel-github.sh`, `submit-packagist.sh`, `tag-go-module.sh`.
 

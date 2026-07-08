@@ -49,7 +49,7 @@ Replace `966512345678` with the full WhatsApp number (country code, no `+`).
 | Full docs (English) | [README.md](../README.md) |
 | Full docs (Arabic) | [README.ar.md](../README.ar.md) |
 | Developer reference | [DEVELOPERS.md](../DEVELOPERS.md) |
-| Cursor MCP | [omdaa.com/mcp](https://omdaa.com/mcp) |
+| Cursor MCP | [omdaa.com/mcp](https://omdaa.com/mcp) · [Cursor Directory](https://cursor.directory/plugins/omdaa-api) |
 | n8n node | [GitHub](https://github.com/omdaapi/n8n-nodes-whatsapp-omdaa) |
 | API docs | [omdaa.net](https://omdaa.net) |
 

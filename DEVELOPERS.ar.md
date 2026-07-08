@@ -33,10 +33,12 @@
 
 خادم MCP HTTP مجاني — بديل لـ Wassenger MCP المدفوع.
 
+- **Cursor Directory:** [cursor.directory/plugins/omdaa-api](https://cursor.directory/plugins/omdaa-api) (Rule + MCP + Skill)
 - نقطة النهاية: `POST https://omdaa.com/api/v1/mcp?key=YOUR_API_KEY`
 - الاكتشاف: `GET https://omdaa.com/api/v1/mcp/info`
 - الإضافة: [cursor-plugin/omdaa-whatsapp/](cursor-plugin/omdaa-whatsapp/)
 - التوثيق: [omdaa.net/guides/mcp-ar.html](https://omdaa.net/guides/mcp-ar.html)
+- الصفحة: [omdaa.com/mcp](https://omdaa.com/mcp)
 
 ---
 
