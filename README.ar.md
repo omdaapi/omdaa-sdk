@@ -1,76 +1,99 @@
-# Omdaa API — المكتبات الرسمية للتكامل مع واتساب
+# Omdaa API — النظام البيئي الرسمي للمطورين
 
-<!-- توثيق عربي احترافي لمكتبات Omdaa. منصة مصرية لواجهة WhatsApp Business API. إرسال واستقبال رسائل واتساب، تحكم كامل، ربط الذكاء الاصطناعي. Node.js, PHP, Python, Go, Laravel. -->
+<!-- توثيق عربي احترافي: SDK، Cursor MCP واتساب، n8n، مجاني للأبد -->
 
-> **مكتبات رسمية (SDK)** للتكامل مع [Omdaa](https://omdaa.com) — منصة **مصرية** لواجهة **WhatsApp Business API** · تحكم كامل بالواتساب · ربط الذكاء الاصطناعي · Node.js · PHP · Python · Go · Laravel
+<div align="center">
+
+**[الموقع](https://omdaa.com)** · **[لوحة التحكم](https://omdaa.com/dashboard)** · **[التوثيق](https://omdaa.net)** · **[MCP](https://omdaa.com/mcp)** · **[API](https://omdaa.com/api/v1/health)**
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+[![مجاني للأبد](https://img.shields.io/badge/التسعير-مجاني%20للأبد-10B981.svg)](https://omdaa.com)
 
-**English:** [Full documentation in English](README.md) · **بدء سريع:** [docs/QUICKSTART-AR.md](docs/QUICKSTART-AR.md)
+**English:** [README.md](README.md) · [docs/QUICKSTART-EN.md](docs/QUICKSTART-EN.md)
 
----
-
-## ما هي منصة Omdaa؟
-
-**Omdaa** منصة **مصرية** متخصصة في [WhatsApp Business API](https://omdaa.com) تمنح المطورين **تحكماً كاملاً** في إرسال واستقبال رسائل واتساب، مع دعم **الربط بالذكاء الاصطناعي** لتحسين تجربة العملاء. تُستخدم في بناء بوتات واتساب، أنظمة إشعارات، ودعم عملاء عبر واتساب.
-
-### أبرز المميزات
-
-- **تحكم كامل بالواتساب:** إرسال واستقبال الرسائل النصية والوسائط (صور، ملفات، رسائل تفاعلية).
-- **جلسات متعددة (Multi-device):** إدارة أكثر من جلسة واتساب مع عرض QR للربط.
-- **ويب هوكس (Webhooks):** استقبال الأحداث فوراً (رسائل واردة، حالة القراءة، حالة الجلسة).
-- **قوالب الرسائل والإرسال المجدول والجماعي:** مناسب للحملات والرسائل المؤجلة.
-- **ربط جاهز بالذكاء الاصطناعي:** لتحسين الردود التلقائية وتجربة المحادثة.
-- **لوحة تحكم ومصادقة:** إدارة المستخدمين، الفواتير، ومفاتيح API من لوحة واحدة.
-
-جميع المكتبات في هذا المستودع تستخدم **نفس واجهة الـ API** وتدعم هذه الميزات. المصدر: [github.com/omdaapi/omdaa-sdk](https://github.com/omdaapi/omdaa-sdk).
+</div>
 
 ---
 
-## الحزم واللغات المدعومة
+## نظرة عامة
 
-| الحزمة | اللغة | أمر التثبيت |
-|--------|--------|-------------|
+**[Omdaa](https://omdaa.com)** منصة أتمتة **واتساب مجانية للأبد** للشركات والمطورين. جلسات ورسائل وويب هوكس و**Omdaa AI** بلا حدود — بدون بطاقة ائتمان وبدون خطط مدفوعة.
+
+هذا المستودع هو **المركز الرسمي للمطورين** في Omdaa:
+
+| المكوّن | الوصف |
+|---------|--------|
+| **حزم SDK** | Node.js · PHP · Python · Go · Laravel — نفس REST API |
+| **[إضافة Cursor MCP](cursor-plugin/omdaa-whatsapp/)** | خادم **Cursor MCP واتساب** مجاني — **بديل Wassenger MCP** |
+| **أمثلة وCI** | سكربتات جاهزة · GitHub Actions · Dependabot |
+
+**مستودع مرتبط:** [n8n-nodes-whatsapp-omdaa](https://github.com/omdaapi/n8n-nodes-whatsapp-omdaa) — عقدة n8n المجتمعية.
+
+---
+
+## مجاني للأبد
+
+| الميزة | متاح |
+|--------|------|
+| جلسات واتساب (Baileys) | بلا حدود |
+| الرسائل والوسائط | بلا حدود |
+| Webhooks | بلا حدود |
+| Omdaa AI (Groq / OpenRouter) | بلا حدود |
+| مفاتيح API ولوحة التحكم | مجاني |
+| خادم MCP لـ Cursor | مجاني |
+
+API الإنتاج: `https://omdaa.com/api/v1` · التوثيق: `https://omdaa.net`
+
+---
+
+## Cursor MCP واتساب (مجاني)
+
+اربط واتساب بـ **Cursor** بنقرة واحدة — أرسل رسائل، تحقق من الأرقام، أدر الجلسات.
+
+| المورد | الرابط |
+|--------|--------|
+| صفحة MCP | [omdaa.com/mcp](https://omdaa.com/mcp) |
+| دليل عربي | [omdaa.net/guides/mcp-ar.html](https://omdaa.net/guides/mcp-ar.html) |
+| دليل إنجليزي | [omdaa.net/guides/mcp-en.html](https://omdaa.net/guides/mcp-en.html) |
+| اكتشاف API | `GET /api/v1/mcp/info` |
+| مصدر الإضافة | [cursor-plugin/omdaa-whatsapp/](cursor-plugin/omdaa-whatsapp/) |
+
+**التثبيت في Cursor** — أضف إلى `mcp.json`:
+
+```json
+{
+  "mcpServers": {
+    "omdaa": {
+      "type": "http",
+      "url": "https://omdaa.com/api/v1/mcp?key=YOUR_API_KEY"
+    }
+  }
+}
+```
+
+**أدوات MCP:** `list_sessions` · `get_session_status` · `send_text_message` · `check_whatsapp_number` · `get_webhook_config` · `get_health`
+
+---
+
+## حزم SDK
+
+| الحزمة | اللغة | التثبيت |
+|--------|-------|---------|
 | [omdaa-js](packages/omdaa-js) | Node.js / TypeScript | `npm install omdaa-api-client` |
 | [omdaa-php](packages/omdaa-php) | PHP 8.1+ | `composer require omdaa/omdaa-php` |
 | [omdaa-python](packages/omdaa-python) | Python 3.9+ | `pip install omdaa-api-client` |
-| [omdaa-go](packages/omdaa-go) | Go | `go get github.com/omdaa/omdaa-go` |
+| [omdaa-go](packages/omdaa-go) | Go 1.21+ | `go get github.com/omdaa/omdaa-go` |
 | [omdaa-laravel](packages/omdaa-laravel) | Laravel | `composer require omdaa/omdaa-laravel` |
 
----
-
-## خطوات التثبيت حسب اللغة
-
-### Node.js / TypeScript
-
-```bash
-npm install omdaa-api-client
-```
-
-- يتطلب **Node.js 18+**.
-- يدعم CommonJS و ESM و TypeScript.
-
-### PHP
-
-```bash
-composer require omdaa/omdaa-php
-```
-
-- يتطلب **PHP 8.1+** و **GuzzleHTTP ^7.8**.
-
-### Python
-
-```bash
-pip install omdaa-api-client
-```
-
-- يتطلب **Python 3.9+** و **requests >= 2.28**.
+جميع الحزم تستخدم **نفس REST API** — رسائل، جلسات، webhooks، قوالب، إرسال مجدول وجماعي، جهات اتصال، مجموعات، تخزين، AI، والمزيد.
 
 ---
 
-## أمثلة سريعة — إرسال رسالة واتساب
+## البدء السريع
 
-استبدل `YOUR_API_KEY` بمفتاحك من [لوحة تحكم Omdaa](https://omdaa.com/dashboard)، و `9665XXXXXXXX` برقم واتساب المستلم (مع رمز الدولة بدون +).
+1. سجّل في [omdaa.com](https://omdaa.com) وأنشئ **API Key** من [لوحة التحكم](https://omdaa.com/dashboard/api-keys).
+2. اربط جلسة واتساب (امسح QR من اللوحة).
+3. ثبّت SDK للغتك وأرسل أول رسالة.
 
 ### Node.js
 
@@ -83,7 +106,7 @@ const res = await client.messages.sendText({
   to: '9665XXXXXXXX',
   message: 'مرحباً من Omdaa',
 });
-console.log(res.data?.messageId);
+console.log('تم الإرسال:', res.data?.messageId);
 ```
 
 ### PHP
@@ -91,11 +114,12 @@ console.log(res.data?.messageId);
 ```php
 <?php
 use Omdaa\Api\OmdaaClient;
+
 $client = new OmdaaClient('YOUR_API_KEY');
 $result = $client->messages()->sendText([
-  'sessionId' => 'default',
-  'to' => '9665XXXXXXXX',
-  'message' => 'مرحباً من Omdaa',
+    'sessionId' => 'default',
+    'to' => '9665XXXXXXXX',
+    'message' => 'مرحباً من Omdaa',
 ]);
 ```
 
@@ -103,66 +127,82 @@ $result = $client->messages()->sendText([
 
 ```python
 from omdaa import OmdaaClient
+
 client = OmdaaClient("YOUR_API_KEY")
 result = client.messages.send_text({
-  "sessionId": "default",
-  "to": "9665XXXXXXXX",
-  "message": "مرحباً من Omdaa",
+    "sessionId": "default",
+    "to": "9665XXXXXXXX",
+    "message": "مرحباً من Omdaa",
 })
 ```
 
-للأمثلة الكاملة مع معالجة الأخطاء راجع [README.md](README.md).
+المزيد: [examples/](examples/) · [docs/QUICKSTART-AR.md](docs/QUICKSTART-AR.md)
 
 ---
 
-## تشغيل الأمثلة الجاهزة من المستودع
+## تكاملات المنصة
 
-مجلد **[examples/](examples/)** يحتوي سكربتات جاهزة للتشغيل:
-
-| الملف | الوصف | الأمر |
-|-------|--------|-------|
-| [send-message.js](examples/send-message.js) | إرسال رسالة (Node) | `node examples/send-message.js` |
-| [send-message.php](examples/send-message.php) | إرسال رسالة (PHP) | `php examples/send-message.php` |
-| [send-message.py](examples/send-message.py) | إرسال رسالة (Python) | `python3 examples/send-message.py` |
-
-من جذر المستودع: نفّذ `make install` ثم عيّن `OMDAA_API_KEY` واختيارياً `OMDAA_TO` ثم شغّل المثال المناسب.
+| التكامل | لوحة التحكم | التوثيق |
+|---------|-------------|---------|
+| **n8n** | [omdaa.com/n8n](https://omdaa.com/n8n/) | [مستودع n8n](https://github.com/omdaapi/n8n-nodes-whatsapp-omdaa) |
+| **Omdaa AI** | [dashboard/openai](https://omdaa.com/dashboard/openai) | [omdaa.net](https://omdaa.net) |
+| **Webhooks** | [dashboard/webhooks](https://omdaa.com/dashboard/webhooks) | `/api/v1/webhooks` |
+| **OMDAA API Free** | [dashboard/free-api](https://omdaa.com/dashboard/free-api) | Outbox push/pull |
+| **Zapier** | صفحة التكاملات | قوالب webhook |
+| **Geo Links** | [dashboard/geo-links](https://omdaa.com/dashboard/geo-links) | روابط تتبع |
 
 ---
 
-## الروابط المهمة
+## التوثيق
+
+| المستند | اللغة | الوصف |
+|---------|-------|--------|
+| [README.ar.md](README.ar.md) | العربية | هذا الملف — نظرة شاملة |
+| [README.md](README.md) | English | Full ecosystem overview |
+| [DEVELOPERS.ar.md](DEVELOPERS.ar.md) | العربية | مرجع المطورين |
+| [DEVELOPERS.md](DEVELOPERS.md) | English | Developer reference |
+| [CHANGELOG.md](CHANGELOG.md) | English | سجل الإصدارات |
+| [omdaa.net](https://omdaa.net) | عربي / English | موقع التوثيق الرسمي |
+
+---
+
+## التطوير
+
+```bash
+make install   # تثبيت تبعيات جميع الحزم
+make test      # JS + PHP + Python + Go
+```
+
+---
+
+## هيكل المستودع
+
+```
+omdaa-sdk/
+├── packages/           # SDK رسمي (5 لغات)
+├── cursor-plugin/      # إضافة Cursor MCP واتساب
+├── examples/           # أمثلة send-message
+├── docs/               # بدء سريع (عربي / إنجليزي)
+├── .github/            # CI · Dependabot · SEO
+└── DEVELOPERS.ar.md    # مميزات المنصة للمطورين
+```
+
+---
+
+## الروابط
 
 | الرابط | الوصف |
 |--------|--------|
-| [omdaa.com](https://omdaa.com) | الموقع الرسمي والتسجيل |
-| [omdaa.com/dashboard](https://omdaa.com/dashboard) | لوحة التحكم واستخراج API Key |
-| [توثيق API](https://omdaa.com/docs) | مرجع نقاط نهاية الـ API |
-| [المستودع على GitHub](https://github.com/omdaapi/omdaa-sdk) | كود المصدر والتحديثات |
+| [omdaa.com](https://omdaa.com) | الموقع والتسجيل |
+| [omdaa.net](https://omdaa.net) | التوثيق |
+| [Swagger](https://omdaa.com/api/v1/docs) | مرجع OpenAPI |
+| [GitHub — omdaa-sdk](https://github.com/omdaapi/omdaa-sdk) | هذا المستودع |
+| [GitHub — n8n](https://github.com/omdaapi/n8n-nodes-whatsapp-omdaa) | تكامل n8n |
+| [الدعم](mailto:support@omdaa.com) | support@omdaa.com |
 
 ---
 
-## تشغيل الاختبارات
-
-من جذر المستودع:
-
-```bash
-make install   # مرة واحدة
-make test      # اختبارات JS + PHP + Python
-```
-
-أو لكل لغة: `make test-js`, `make test-php`, `make test-python`.
-
----
-
-## للمطورين
-
-- **[DEVELOPERS.md](DEVELOPERS.md)** — اللغات، أمثلة سريعة، ومميزات المنصة (باللغة الإنجليزية في المستودع؛ المحتوى نفسه ينطبق على التكامل بالعربية).
-
----
-
-## كلمات مفتاحية للبحث والتوثيق
-
-منصة واتساب مصرية · API واتساب · إرسال رسائل واتساب · تكامل واتساب · WhatsApp Business API Egypt · Omdaa SDK · مكتبات واتساب · بوت واتساب · ذكاء اصطناعي واتساب · Node.js PHP Python واتساب
-
----
-
-<div align="center"><strong>Omdaa — منصة مصرية لـ WhatsApp Business API</strong></div>
+<div align="center">
+<strong>Omdaa — WhatsApp Business API مجاني للأبد</strong><br/>
+مصمّم للمطورين · منصة مصرية · وصول عالمي
+</div>

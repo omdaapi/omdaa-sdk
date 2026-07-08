@@ -2,6 +2,8 @@
 
 > دليل مختصر للتكامل مع **منصة Omdaa** (واتساب للأعمال) باستخدام المكتبات الرسمية.
 
+> **مجاني للأبد:** Omdaa API مجاني بالكامل — لا اشتراكات ولا بطاقة ائتمان. جميع المميزات متاحة للجميع.
+
 ---
 
 ## 1. الحصول على مفتاح API
@@ -34,9 +36,14 @@
 
 ## 4. الخطوة التالية
 
-- **الشرح الكامل بالعربية:** [README.ar.md](../README.ar.md)
-- **التوثيق بالإنجليزية والأمثلة الكاملة:** [README.md](../README.md)
-- **للمطورين (مميزات المنصة):** [DEVELOPERS.md](../DEVELOPERS.md)
+| المورد | الرابط |
+|--------|--------|
+| الشرح الكامل (عربي) | [README.ar.md](../README.ar.md) |
+| الشرح الكامل (English) | [README.md](../README.md) |
+| مرجع المطورين | [DEVELOPERS.ar.md](../DEVELOPERS.ar.md) |
+| Cursor MCP واتساب | [omdaa.com/mcp](https://omdaa.com/mcp) |
+| عقدة n8n | [GitHub](https://github.com/omdaapi/n8n-nodes-whatsapp-omdaa) |
+| التوثيق الرسمي | [omdaa.net](https://omdaa.net) |
 
 ---
 

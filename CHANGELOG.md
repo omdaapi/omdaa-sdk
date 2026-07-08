@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
+- **Cursor MCP WhatsApp plugin** — [cursor-plugin/omdaa-whatsapp/](cursor-plugin/omdaa-whatsapp/) (Wassenger MCP alternative).
+- **DEVELOPERS.ar.md** — Arabic developer reference.
+- **docs/QUICKSTART-EN.md** — English quick-start guide.
 - GitHub Actions CI (test-js, test-php, test-python, test-go, examples smoke).
 - Vitest coverage for omdaa-js; `npm run test:coverage`.
 - Dependabot for npm, Composer, and pip.
@@ -15,8 +18,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - .nvmrc for Node version consistency.
 
 ### Changed
+- **README.md / README.ar.md** — full ecosystem docs (SDK, MCP, n8n, integrations, Free Forever).
+- **DEVELOPERS.md** — MCP, n8n repo links, platform table.
+- GitHub About metadata — MCP and n8n keywords.
 - License: MIT → Apache-2.0 (all packages).
 - Root package.json: added `license` field.
+
+### External
+- New repo: [n8n-nodes-whatsapp-omdaa](https://github.com/omdaapi/n8n-nodes-whatsapp-omdaa) — official n8n community node.
 
 ---
 

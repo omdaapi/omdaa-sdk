@@ -1,32 +1,67 @@
 # For developers — Omdaa API
 
-Developer-focused: supported languages, official libraries, and platform features.
+Developer reference: languages, libraries, MCP, n8n, and platform capabilities.
+
+**العربية:** [DEVELOPERS.ar.md](DEVELOPERS.ar.md)
 
 ---
 
-## Languages & official libraries
+## Official repositories
 
-Integrate with Omdaa API in your preferred language via ready-made libraries or direct HTTP.
+| Repository | Purpose | Link |
+|------------|---------|------|
+| **omdaa-sdk** | SDK packages + Cursor MCP plugin | [github.com/omdaapi/omdaa-sdk](https://github.com/omdaapi/omdaa-sdk) |
+| **n8n-nodes-whatsapp-omdaa** | n8n community node | [github.com/omdaapi/n8n-nodes-whatsapp-omdaa](https://github.com/omdaapi/n8n-nodes-whatsapp-omdaa) |
 
-| Language / framework | Package | Install | Link |
-|---------------------|---------|---------|------|
-| **Node.js / TypeScript** | `omdaa-api-client` | `npm install omdaa-api-client` | [npm](https://www.npmjs.com/package/omdaa-api-client) |
-| **PHP** | `omdaa/omdaa-php` | `composer require omdaa/omdaa-php` | [Packagist](https://packagist.org/packages/omdaa/omdaa-php) |
-| **Python** | `omdaa-api-client` | `pip install omdaa-api-client` | [PyPI](https://pypi.org/project/omdaa-api-client/) |
-| **Go** | `github.com/omdaa/omdaa-go` | `go get github.com/omdaa/omdaa-go` | [Source](https://github.com/omdaapi/omdaa-sdk/tree/main/packages/omdaa-go) |
-| **Laravel** | `omdaa/omdaa-laravel` | `composer require omdaa/omdaa-laravel` | [Packagist](https://packagist.org/packages/omdaa/omdaa-laravel) |
+---
 
-All libraries support the **same API resources** (messages, sessions, webhooks, templates, scheduled, bulk, contacts, groups, chats, storage, security, audit, users, email, AI, and more).
+## Languages & libraries
+
+| Language | Package | Install |
+|----------|---------|---------|
+| **Node.js / TypeScript** | `omdaa-api-client` | `npm install omdaa-api-client` |
+| **PHP 8.1+** | `omdaa/omdaa-php` | `composer require omdaa/omdaa-php` |
+| **Python 3.9+** | `omdaa-api-client` | `pip install omdaa-api-client` |
+| **Go 1.21+** | `github.com/omdaa/omdaa-go` | `go get github.com/omdaa/omdaa-go` |
+| **Laravel** | `omdaa/omdaa-laravel` | `composer require omdaa/omdaa-laravel` |
+
+All libraries expose the **same API resources**: messages, sessions, webhooks, templates, scheduled & bulk, contacts, groups, chats, storage, security, audit, users, email, AI, and more.
+
+---
+
+## Cursor MCP (WhatsApp in Cursor)
+
+Free HTTP MCP server — alternative to paid Wassenger MCP.
+
+- Endpoint: `POST https://omdaa.com/api/v1/mcp?key=YOUR_API_KEY`
+- Discovery: `GET https://omdaa.com/api/v1/mcp/info`
+- Plugin: [cursor-plugin/omdaa-whatsapp/](cursor-plugin/omdaa-whatsapp/)
+- Docs: [omdaa.net/guides/mcp-en.html](https://omdaa.net/guides/mcp-en.html)
+
+---
+
+## n8n integration
+
+Install the community node:
+
+```bash
+npm install @omdaa/n8n-nodes-whatsapp-omdaa
+```
+
+Or from n8n UI: **Settings → Community Nodes →** `@omdaa/n8n-nodes-whatsapp-omdaa`
+
+- Source: [n8n-nodes-whatsapp-omdaa](https://github.com/omdaapi/n8n-nodes-whatsapp-omdaa)
+- Hosted n8n: [omdaa.com/n8n](https://omdaa.com/n8n/)
 
 ---
 
 ## Quick examples
 
-### Node.js / TypeScript
+### Node.js
 ```js
 const { OmdaaClient } = require('omdaa-api-client');
 const client = new OmdaaClient({ apiKey: 'YOUR_API_KEY' });
-const res = await client.messages.sendText({
+await client.messages.sendText({
   sessionId: 'default',
   to: '966xxxxxxxxx',
   message: 'Hello from Omdaa',
@@ -35,7 +70,6 @@ const res = await client.messages.sendText({
 
 ### PHP
 ```php
-<?php
 use Omdaa\Api\OmdaaClient;
 $client = new OmdaaClient('YOUR_API_KEY');
 $client->messages()->sendText([
@@ -68,45 +102,33 @@ client.Messages.SendText(map[string]interface{}{
 })
 ```
 
-### Laravel
-```php
-use Omdaa;
-Omdaa::messages()->sendText([
-  'sessionId' => 'default',
-  'to' => '966xxxxxxxxx',
-  'message' => 'Hello from Omdaa',
-]);
-```
-
 ---
 
-## Platform features for developers
+## Platform features
 
 | Feature | Description |
-|--------|-------------|
-| **Unified REST API** | Same paths and responses across all languages; clear docs and easy integration. |
-| **Simple auth** | Bearer API Key from dashboard; optional JWT for protected areas. |
-| **Full API coverage** | Messages (text, image, file, interactive, lists, buttons, polls), sessions, webhooks, templates, scheduled & bulk, contacts, groups, chats, storage, integrations, queues, security, audit, email, AI, and more. |
-| **Webhooks** | Receive events in real time (incoming messages, session status, etc.) without polling. |
-| **Scheduling & bulk** | Delayed send and bulk requests with queues and status. |
-| **Multi-language SDKs** | Official libraries for Node, PHP, Python, Go, Laravel; you can also use raw HTTP from any language. |
+|---------|-------------|
+| **Free Forever** | Unlimited sessions, messages, webhooks, Omdaa AI — no credit card |
+| **Unified REST API** | `https://omdaa.com/api/v1` — same paths across all SDKs |
+| **Auth** | `Authorization: Bearer YOUR_API_KEY` |
+| **Baileys sessions** | Multi-device WhatsApp linking via QR |
+| **Webhooks** | Real-time events (messages, session status, QR) |
+| **Omdaa AI** | Groq / OpenRouter bots via dashboard |
+| **OMDAA API Free** | Outbox push/pull for any website or server |
+| **MCP** | Cursor integration for AI-assisted WhatsApp ops |
+| **Geo Links** | Trackable WhatsApp campaign links |
+| **Swagger** | [omdaa.com/api/v1/docs](https://omdaa.com/api/v1/docs) |
 
 ---
 
 ## Getting an API key
 
-1. Log in to the [Omdaa dashboard](https://omdaa.com/dashboard).
-2. From Settings or the API section, create an **API Key**.
-3. Use it in the request header: `Authorization: Bearer YOUR_API_KEY`.
+1. Sign up at [omdaa.com](https://omdaa.com).
+2. Open [Dashboard → API Keys](https://omdaa.com/dashboard/api-keys).
+3. Create a key and use: `Authorization: Bearer YOUR_API_KEY`.
 
-For help and support: [omdaa.com](https://omdaa.com) or official support channels.
-
----
-
-## Source code
-
-All libraries (including Go) live in a single repo: [github.com/omdaapi/omdaa-sdk](https://github.com/omdaapi/omdaa-sdk).
+Support: [support@omdaa.com](mailto:support@omdaa.com)
 
 ---
 
-<div align="center">**Built for developers**</div>
+<div align="center"><strong>Built for developers — Free Forever</strong></div>

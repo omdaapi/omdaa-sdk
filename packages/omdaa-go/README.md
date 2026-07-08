@@ -1,6 +1,6 @@
 # omdaa-go
 
-Official Go client for the [Omdaa](https://omdaa.com) WhatsApp Business API.
+Official Go client for the [Omdaa](https://omdaa.com) WhatsApp Business API. **Omdaa API is free forever** — unlimited sessions, messages, and Omdaa AI.
 
 ## Installation
 

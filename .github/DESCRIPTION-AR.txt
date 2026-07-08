@@ -1,1 +1,1 @@
-مكتبات رسمية لتكامل واتساب Omdaa API — منصة مصرية. Node.js, PHP, Python, Go, Laravel. تحكم كامل بالواتساب وربط الذكاء الاصطناعي.
+SDK رسمي + Cursor MCP لواتساب Omdaa API. مجاني للأبد. Node.js, PHP, Python, Go, Laravel, n8n. بديل Wassenger MCP.

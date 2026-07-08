@@ -11,3 +11,12 @@ laravel
 api-client
 typescript
 go
+mcp
+cursor
+cursor-mcp
+n8n
+free-forever
+wassenger-alternative
+automation
+webhook
+baileys

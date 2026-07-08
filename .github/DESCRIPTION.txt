@@ -1,1 +1,1 @@
-Official SDK for Omdaa WhatsApp Business API (Egypt). Node.js, PHP, Python, Go, Laravel. Full WhatsApp control & AI integration.
+Official SDK & Cursor MCP for Omdaa WhatsApp API. Free forever. Node.js, PHP, Python, Go, Laravel, n8n. Wassenger MCP alternative.

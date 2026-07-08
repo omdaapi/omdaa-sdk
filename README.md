@@ -1,74 +1,99 @@
-# Omdaa API — Official SDKs
+# Omdaa API — Official Developer Ecosystem
 
-<!-- SEO: Official SDKs for Omdaa WhatsApp Business API. Send WhatsApp messages, manage sessions, webhooks. Egyptian platform. Full WhatsApp control, AI integration. Node.js, PHP, Python, Go, Laravel. -->
+<!-- SEO: Official SDKs, Cursor MCP WhatsApp, n8n node for Omdaa WhatsApp Business API. Free forever. Node.js, PHP, Python, Go, Laravel. -->
 
-> **Official SDKs** for [Omdaa](https://omdaa.com) **WhatsApp Business API** — Egyptian platform · Full WhatsApp control · AI integration · Node.js · PHP · Python · Go · Laravel
+<div align="center">
 
-**العربية:** [الشرح الكامل بالعربية (Arabic documentation)](README.ar.md) · **Quick start (AR):** [docs/QUICKSTART-AR.md](docs/QUICKSTART-AR.md)
+**[Website](https://omdaa.com)** · **[Dashboard](https://omdaa.com/dashboard)** · **[Docs](https://omdaa.net)** · **[MCP](https://omdaa.com/mcp)** · **[API](https://omdaa.com/api/v1/health)**
 
 [![License: Apache-2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
+[![Free Forever](https://img.shields.io/badge/Pricing-Free%20Forever-10B981.svg)](https://omdaa.com)
+
+**العربية:** [README.ar.md](README.ar.md) · [docs/QUICKSTART-AR.md](docs/QUICKSTART-AR.md)
+
+</div>
 
 ---
 
-## What is Omdaa?
+## Overview
 
-**Omdaa** is an **Egyptian** [WhatsApp Business API](https://omdaa.com) platform for **sending and receiving WhatsApp messages**, with **full control** and **AI integration**. Use it to build WhatsApp bots, notifications, and customer support. It lets you:
+**[Omdaa](https://omdaa.com)** is a **Free Forever** WhatsApp automation platform for businesses and developers. Unlimited sessions, messages, webhooks, and **Omdaa AI** — no credit card, no paid tiers.
 
-- **Full control** over sending and receiving text and media messages (images, files, interactive).
-- Manage multiple WhatsApp sessions (multi-device) and display QR for linking.
-- Configure webhooks to receive events (incoming messages, read receipts, etc.).
-- Message templates, scheduled and bulk sending, contacts and groups.
-- **Ready-made AI integration** to improve replies and customer engagement.
-- Dashboard, users, billing, and security.
+This repository is the **official developer hub** for Omdaa:
 
-All libraries in this repo use the **same API** and support these features. Source: [github.com/omdaapi/omdaa-sdk](https://github.com/omdaapi/omdaa-sdk).
+| Component | Description |
+|-----------|-------------|
+| **SDK packages** | Node.js, PHP, Python, Go, Laravel — same REST API |
+| **[Cursor MCP plugin](cursor-plugin/omdaa-whatsapp/)** | Free **Cursor MCP WhatsApp** server — **Wassenger MCP alternative** |
+| **Examples & CI** | Runnable samples, GitHub Actions, Dependabot |
+
+**Related repository:** [n8n-nodes-whatsapp-omdaa](https://github.com/omdaapi/n8n-nodes-whatsapp-omdaa) — n8n community node.
 
 ---
 
-## Packages & languages
+## Free Forever
+
+| Feature | Included |
+|---------|----------|
+| WhatsApp sessions (Baileys) | Unlimited |
+| Messages & media | Unlimited |
+| Webhooks | Unlimited |
+| Omdaa AI (Groq / OpenRouter) | Unlimited |
+| API keys & dashboard | Free |
+| MCP server for Cursor | Free |
+
+Production API: `https://omdaa.com/api/v1` · Docs: `https://omdaa.net`
+
+---
+
+## Cursor MCP WhatsApp (Free)
+
+Connect WhatsApp to **Cursor** with one click — send messages, verify numbers, manage sessions.
+
+| Resource | Link |
+|----------|------|
+| Landing page | [omdaa.com/mcp](https://omdaa.com/mcp) |
+| English guide | [omdaa.net/guides/mcp-en.html](https://omdaa.net/guides/mcp-en.html) |
+| Arabic guide | [omdaa.net/guides/mcp-ar.html](https://omdaa.net/guides/mcp-ar.html) |
+| API discovery | `GET /api/v1/mcp/info` |
+| Plugin source | [cursor-plugin/omdaa-whatsapp/](cursor-plugin/omdaa-whatsapp/) |
+
+**Install in Cursor** — add to `mcp.json`:
+
+```json
+{
+  "mcpServers": {
+    "omdaa": {
+      "type": "http",
+      "url": "https://omdaa.com/api/v1/mcp?key=YOUR_API_KEY"
+    }
+  }
+}
+```
+
+**MCP tools:** `list_sessions` · `get_session_status` · `send_text_message` · `check_whatsapp_number` · `get_webhook_config` · `get_health`
+
+---
+
+## SDK Packages
 
 | Package | Language | Install |
-|--------|----------|---------|
+|---------|----------|---------|
 | [omdaa-js](packages/omdaa-js) | Node.js / TypeScript | `npm install omdaa-api-client` |
 | [omdaa-php](packages/omdaa-php) | PHP 8.1+ | `composer require omdaa/omdaa-php` |
 | [omdaa-python](packages/omdaa-python) | Python 3.9+ | `pip install omdaa-api-client` |
-| [omdaa-go](packages/omdaa-go) | Go | `go get github.com/omdaa/omdaa-go` |
+| [omdaa-go](packages/omdaa-go) | Go 1.21+ | `go get github.com/omdaa/omdaa-go` |
 | [omdaa-laravel](packages/omdaa-laravel) | Laravel | `composer require omdaa/omdaa-laravel` |
 
----
-
-## Installation (per language)
-
-### Node.js / TypeScript
-
-```bash
-npm install omdaa-api-client
-```
-
-- Requires **Node.js 18+**.
-- Supports CommonJS, ESM, and TypeScript.
-
-### PHP
-
-```bash
-composer require omdaa/omdaa-php
-```
-
-- Requires **PHP 8.1+** and **GuzzleHTTP ^7.8**.
-
-### Python
-
-```bash
-pip install omdaa-api-client
-```
-
-- Requires **Python 3.9+** and **requests >= 2.28**.
+All packages share the **same REST API** — messages, sessions, webhooks, templates, scheduled & bulk send, contacts, groups, storage, AI, and more.
 
 ---
 
-## Quick start examples
+## Quick Start
 
-Replace `YOUR_API_KEY` with your key from the [Omdaa dashboard](https://omdaa.com/dashboard) (API Keys), and `9665XXXXXXXX` with the recipient WhatsApp number (country code, no +).
+1. Sign up at [omdaa.com](https://omdaa.com) and create an **API Key** in the [dashboard](https://omdaa.com/dashboard/api-keys).
+2. Link a WhatsApp session (scan QR in dashboard).
+3. Install the SDK for your language and send your first message.
 
 ### Node.js
 
@@ -79,15 +104,12 @@ const client = new OmdaaClient({ apiKey: 'YOUR_API_KEY' });
 
 (async () => {
   try {
-    const sessions = await client.sessions.list();
-    console.log('Sessions:', sessions.data);
-
     const res = await client.messages.sendText({
       sessionId: 'default',
       to: '9665XXXXXXXX',
       message: 'Hello from Omdaa',
     });
-    console.log('Message sent:', res.data?.messageId);
+    console.log('Sent:', res.data?.messageId);
   } catch (err) {
     if (err.name === 'OmdaaError') console.error(err.status, err.message);
     else throw err;
@@ -102,111 +124,109 @@ const client = new OmdaaClient({ apiKey: 'YOUR_API_KEY' });
 require __DIR__ . '/vendor/autoload.php';
 
 use Omdaa\Api\OmdaaClient;
-use Omdaa\Api\OmdaaException;
 
 $client = new OmdaaClient('YOUR_API_KEY');
-
-try {
-    $sessions = $client->sessions()->list();
-    $result = $client->messages()->sendText([
-        'sessionId' => 'default',
-        'to' => '9665XXXXXXXX',
-        'message' => 'Hello from Omdaa',
-    ]);
-    print_r($result);
-} catch (OmdaaException $e) {
-    echo $e->getStatusCode() . ': ' . $e->getMessage();
-}
+$result = $client->messages()->sendText([
+    'sessionId' => 'default',
+    'to' => '9665XXXXXXXX',
+    'message' => 'Hello from Omdaa',
+]);
 ```
 
 ### Python
 
 ```python
-import os
-from omdaa import OmdaaClient, OmdaaError
+from omdaa import OmdaaClient
 
-client = OmdaaClient(os.environ.get("OMDAA_API_KEY", "YOUR_API_KEY"))
-
-try:
-    sessions = client.sessions.list()
-    result = client.messages.send_text({
-        "sessionId": "default",
-        "to": "9665XXXXXXXX",
-        "message": "Hello from Omdaa",
-    })
-    print(result)
-except OmdaaError as e:
-    print(e.status_code, str(e))
+client = OmdaaClient("YOUR_API_KEY")
+result = client.messages.send_text({
+    "sessionId": "default",
+    "to": "9665XXXXXXXX",
+    "message": "Hello from Omdaa",
+})
 ```
+
+More examples: [examples/](examples/) · Arabic quick start: [docs/QUICKSTART-AR.md](docs/QUICKSTART-AR.md) · English: [docs/QUICKSTART-EN.md](docs/QUICKSTART-EN.md)
 
 ---
 
-## Ready-to-run examples (from repo)
+## Platform Integrations
 
-The **[examples/](examples/)** folder contains runnable scripts:
-
-| File | Description | Run |
-|------|-------------|-----|
-| [send-message.js](examples/send-message.js) | Send text (Node) | `node examples/send-message.js` |
-| [send-message.php](examples/send-message.php) | Send text (PHP) | `php examples/send-message.php` |
-| [send-message.py](examples/send-message.py) | Send text (Python) | `python3 examples/send-message.py` |
-
-**From repo root:**
-
-1. Install deps (once): `make install`
-2. Set API key: `export OMDAA_API_KEY=your-api-key`
-3. Optional recipient: `export OMDAA_TO=9665XXXXXXXX`
-4. Run the example for your language as in the table above.
+| Integration | Dashboard | Docs |
+|-------------|-----------|------|
+| **n8n** | [omdaa.com/n8n](https://omdaa.com/n8n/) | [n8n node repo](https://github.com/omdaapi/n8n-nodes-whatsapp-omdaa) |
+| **Omdaa AI** | [dashboard/openai](https://omdaa.com/dashboard/openai) | [omdaa.net](https://omdaa.net) |
+| **Webhooks** | [dashboard/webhooks](https://omdaa.com/dashboard/webhooks) | API `/api/v1/webhooks` |
+| **OMDAA API Free** | [dashboard/free-api](https://omdaa.com/dashboard/free-api) | Outbox push/pull |
+| **Zapier** | Integrations page | Webhook templates |
+| **Geo Links** | [dashboard/geo-links](https://omdaa.com/dashboard/geo-links) | Tracking links |
 
 ---
 
 ## Documentation
 
-| Link | Description |
-|------|-------------|
-| [README (this file)](README.md) | Full docs in English |
-| [README.ar.md](README.ar.md) | Full docs in **Arabic** (الشرح بالعربية) |
-| [docs/QUICKSTART-AR.md](docs/QUICKSTART-AR.md) | Quick start in **Arabic** (البدء السريع) |
-| [CHANGELOG.md](CHANGELOG.md) | Version history and release notes |
+| Document | Language | Description |
+|----------|----------|-------------|
+| [README.md](README.md) | English | This file — full ecosystem overview |
+| [README.ar.md](README.ar.md) | Arabic | الشرح الكامل بالعربية |
+| [DEVELOPERS.md](DEVELOPERS.md) | English | Developer reference |
+| [DEVELOPERS.ar.md](DEVELOPERS.ar.md) | Arabic | مرجع المطورين |
+| [CHANGELOG.md](CHANGELOG.md) | English | Release history |
+| [omdaa.net](https://omdaa.net) | AR / EN | Official documentation site |
+
+---
+
+## Development
+
+```bash
+make install   # install all package deps
+make test      # JS + PHP + Python + Go
+make test-js   # Node.js only
+```
+
+JS coverage: `cd packages/omdaa-js && npm run test:coverage`
+
+---
+
+## Repository Structure
+
+```
+omdaa-sdk/
+├── packages/           # Official SDKs (5 languages)
+├── cursor-plugin/      # Cursor MCP WhatsApp plugin
+├── examples/           # Runnable send-message samples
+├── docs/               # Quick-start guides (AR / EN)
+├── .github/            # CI, Dependabot, SEO metadata
+└── DEVELOPERS.md       # Platform features for developers
+```
+
+---
 
 ## Links
 
 | Link | Description |
 |------|-------------|
 | [omdaa.com](https://omdaa.com) | Website & signup |
-| [omdaa.com/dashboard](https://omdaa.com/dashboard) | Dashboard & API key |
-| [API docs](https://omdaa.com/docs) | API reference (if available on site) |
-| [This repo](https://github.com/omdaapi/omdaa-sdk) | Source code |
+| [omdaa.net](https://omdaa.net) | Documentation |
+| [API health](https://omdaa.com/api/v1/health) | Live API status |
+| [Swagger](https://omdaa.com/api/v1/docs) | OpenAPI reference |
+| [GitHub — omdaa-sdk](https://github.com/omdaapi/omdaa-sdk) | This repo |
+| [GitHub — n8n node](https://github.com/omdaapi/n8n-nodes-whatsapp-omdaa) | n8n integration |
+| [Support](mailto:support@omdaa.com) | support@omdaa.com |
 
 ---
 
-## Tests (from repo root)
+## GitHub SEO (About section)
 
-```bash
-make install   # once
-make test      # JS + PHP + Python + Go
-```
+**Description:** `Official SDK & Cursor MCP for Omdaa WhatsApp API. Free forever. Node.js, PHP, Python, Go, Laravel, n8n. Wassenger MCP alternative.`
 
-Or per language: `make test-js`, `make test-php`, `make test-python`, `make test-go`.  
-JS coverage: `cd packages/omdaa-js && npm run test:coverage`.
+**Website:** `https://omdaa.com`
+
+**Topics:** see [.github/TOPICS.txt](.github/TOPICS.txt)
 
 ---
 
-## For developers
-
-- **[DEVELOPERS.md](DEVELOPERS.md)** — Languages, quick examples, platform features.
-
----
-
-## GitHub SEO
-
-- **About → Description:**  
-  `Official SDK for Omdaa WhatsApp Business API (Egypt). Node.js, PHP, Python, Go, Laravel. Full WhatsApp control & AI integration.`
-- **About → Website:** `https://omdaa.com`
-- **Topics:** `whatsapp`, `whatsapp-api`, `omdaa`, `sdk`, `egypt`, `nodejs`, `php`, `python`, `laravel`, `api-client`, `typescript`
-
-See [.github/DESCRIPTION.txt](.github/DESCRIPTION.txt) (EN), [.github/DESCRIPTION-AR.txt](.github/DESCRIPTION-AR.txt) (AR), and [.github/TOPICS.txt](.github/TOPICS.txt) for copy-paste.
-
----
-
-<div align="center"><strong>Omdaa WhatsApp Business API · Egyptian platform</strong></div>
+<div align="center">
+<strong>Omdaa — Free Forever WhatsApp Business API</strong><br/>
+Built for developers · Egyptian platform · Global reach
+</div>
