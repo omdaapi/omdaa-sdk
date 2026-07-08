@@ -31,14 +31,16 @@ All libraries expose the **same API resources**: messages, sessions, webhooks, t
 
 ## Cursor MCP (WhatsApp in Cursor)
 
-Free HTTP MCP server — alternative to paid Wassenger MCP.
+Free HTTP MCP server v1.2 — alternative to paid Wassenger MCP. **Secure Bearer auth** (no API key in URL).
 
 - **Cursor Directory:** [cursor.directory/plugins/omdaa-api](https://cursor.directory/plugins/omdaa-api) (Rule + MCP + Skill)
-- Endpoint: `POST https://omdaa.com/api/v1/mcp?key=YOUR_API_KEY`
-- Discovery: `GET https://omdaa.com/api/v1/mcp/info`
-- Plugin: [cursor-plugin/omdaa-whatsapp/](cursor-plugin/omdaa-whatsapp/)
-- Docs: [omdaa.net/guides/mcp-en.html](https://omdaa.net/guides/mcp-en.html)
-- Landing: [omdaa.com/mcp](https://omdaa.com/mcp)
+- **Endpoint:** `POST https://omdaa.com/api/v1/mcp` with header `Authorization: Bearer YOUR_API_KEY`
+- **Discovery:** `GET https://omdaa.com/api/v1/mcp/info`
+- **Plugin:** [cursor-plugin/omdaa-whatsapp/](cursor-plugin/omdaa-whatsapp/) (v1.2.0)
+- **Docs:** [omdaa.net/guides/mcp-en.html](https://omdaa.net/guides/mcp-en.html)
+- **Landing:** [omdaa.com/mcp](https://omdaa.com/mcp)
+
+**Tools:** sessions (`create_session`, `get_qr`, `list_sessions`, `get_session_status`), messaging (`send_text_message`, `send_media`, `send_buttons`), `check_whatsapp_number`, `get_webhook_config`, `get_health`.
 
 ---
 

@@ -31,14 +31,16 @@
 
 ## Cursor MCP (واتساب داخل Cursor)
 
-خادم MCP HTTP مجاني — بديل لـ Wassenger MCP المدفوع.
+خادم MCP HTTP مجاني v1.2 — بديل لـ Wassenger MCP المدفوع. **مصادقة Bearer آمنة** (بدون مفتاح في الرابط).
 
 - **Cursor Directory:** [cursor.directory/plugins/omdaa-api](https://cursor.directory/plugins/omdaa-api) (Rule + MCP + Skill)
-- نقطة النهاية: `POST https://omdaa.com/api/v1/mcp?key=YOUR_API_KEY`
-- الاكتشاف: `GET https://omdaa.com/api/v1/mcp/info`
-- الإضافة: [cursor-plugin/omdaa-whatsapp/](cursor-plugin/omdaa-whatsapp/)
-- التوثيق: [omdaa.net/guides/mcp-ar.html](https://omdaa.net/guides/mcp-ar.html)
-- الصفحة: [omdaa.com/mcp](https://omdaa.com/mcp)
+- **نقطة النهاية:** `POST https://omdaa.com/api/v1/mcp` مع header `Authorization: Bearer YOUR_API_KEY`
+- **الاكتشاف:** `GET https://omdaa.com/api/v1/mcp/info`
+- **الإضافة:** [cursor-plugin/omdaa-whatsapp/](cursor-plugin/omdaa-whatsapp/) (v1.2.0)
+- **التوثيق:** [omdaa.net/guides/mcp-ar.html](https://omdaa.net/guides/mcp-ar.html)
+- **الصفحة:** [omdaa.com/mcp](https://omdaa.com/mcp)
+
+**الأدوات:** جلسات (`create_session`, `get_qr`, `list_sessions`, `get_session_status`)، رسائل (`send_text_message`, `send_media`, `send_buttons`)، `check_whatsapp_number`, `get_webhook_config`, `get_health`.
 
 ---
 

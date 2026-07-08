@@ -7,8 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [1.2.0] - 2026-07-08
+
 ### Added
-- **Cursor Directory listing:** [cursor.directory/plugins/omdaa-api](https://cursor.directory/plugins/omdaa-api) (Rule + MCP Server + Skill).
+- **Cursor MCP v1.2.0:** `create_session`, `get_qr`, `send_media`, `send_buttons` tools.
+- Secure `Authorization: Bearer` header auth (deprecated `?key=` in URL).
+- Live MCP usage tracking API (`GET /api/v1/mcp/stats`) and dashboard widget.
+- Streamable HTTP SSE transport for stable Cursor connections.
+
+### Changed
+- Cursor plugin bumped to **1.2.0** — README, skill, rules, marketplace manifest.
+- SDK README / DEVELOPERS docs updated for Bearer auth and 10 MCP tools.
+
+## [1.1.1] - 2026-07-07
 - Cursor plugin Open Plugins layout: `.mcp.json`, `.plugin/plugin.json`, `send-whatsapp` skill, marketplace logo assets.
 - README / DEVELOPERS / QUICKSTART updated with Directory + Marketplace install links.
 - Registry status badges in README.md / README.ar.md (npm, PyPI, Packagist, Go, n8n).

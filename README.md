@@ -68,7 +68,7 @@ Connect WhatsApp to **Cursor** with one click — send messages, verify numbers,
 | API discovery | `GET /api/v1/mcp/info` |
 | Plugin source | [cursor-plugin/omdaa-whatsapp/](cursor-plugin/omdaa-whatsapp/) |
 
-**Install:** open [Cursor Directory → omdaa-api](https://cursor.directory/plugins/omdaa-api) → **Add to Cursor**, then set your API key.
+**Install:** open [Cursor Directory → omdaa-api](https://cursor.directory/plugins/omdaa-api) → **Add to Cursor**, then set `OMDAA_API_KEY` or `Authorization: Bearer` in MCP headers.
 
 **Manual install** — add to `mcp.json`:
 
@@ -77,13 +77,16 @@ Connect WhatsApp to **Cursor** with one click — send messages, verify numbers,
   "mcpServers": {
     "omdaa": {
       "type": "http",
-      "url": "https://omdaa.com/api/v1/mcp?key=YOUR_API_KEY"
+      "url": "https://omdaa.com/api/v1/mcp",
+      "headers": {
+        "Authorization": "Bearer ${env:OMDAA_API_KEY}"
+      }
     }
   }
 }
 ```
 
-**MCP tools:** `list_sessions` · `get_session_status` · `send_text_message` · `check_whatsapp_number` · `get_webhook_config` · `get_health`
+**MCP v1.2 tools (10):** `list_sessions` · `create_session` · `get_qr` · `get_session_status` · `send_text_message` · `send_media` · `send_buttons` · `check_whatsapp_number` · `get_webhook_config` · `get_health`
 
 ---
 

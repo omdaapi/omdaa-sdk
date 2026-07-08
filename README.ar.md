@@ -68,7 +68,7 @@ API الإنتاج: `https://omdaa.com/api/v1` · التوثيق: `https://omdaa
 | اكتشاف API | `GET /api/v1/mcp/info` |
 | مصدر الإضافة | [cursor-plugin/omdaa-whatsapp/](cursor-plugin/omdaa-whatsapp/) |
 
-**التثبيت:** افتح [Cursor Directory → omdaa-api](https://cursor.directory/plugins/omdaa-api) → **Add to Cursor**، ثم ضع مفتاح API.
+**التثبيت:** افتح [Cursor Directory → omdaa-api](https://cursor.directory/plugins/omdaa-api) → **Add to Cursor**، ثم عيّن `OMDAA_API_KEY` أو `Authorization: Bearer` في headers.
 
 **تثبيت يدوي** — أضف إلى `mcp.json`:
 
@@ -77,13 +77,16 @@ API الإنتاج: `https://omdaa.com/api/v1` · التوثيق: `https://omdaa
   "mcpServers": {
     "omdaa": {
       "type": "http",
-      "url": "https://omdaa.com/api/v1/mcp?key=YOUR_API_KEY"
+      "url": "https://omdaa.com/api/v1/mcp",
+      "headers": {
+        "Authorization": "Bearer ${env:OMDAA_API_KEY}"
+      }
     }
   }
 }
 ```
 
-**أدوات MCP:** `list_sessions` · `get_session_status` · `send_text_message` · `check_whatsapp_number` · `get_webhook_config` · `get_health`
+**أدوات MCP v1.2 (10):** `list_sessions` · `create_session` · `get_qr` · `get_session_status` · `send_text_message` · `send_media` · `send_buttons` · `check_whatsapp_number` · `get_webhook_config` · `get_health`
 
 ---
 
