@@ -1,6 +1,6 @@
 # omdaa-laravel
 
-Laravel integration for the [Omdaa](https://omdaa.com) WhatsApp Business API. Wraps [omdaa/omdaa-php](https://github.com/omdaa/omdaa-php).
+Laravel integration for the [Omdaa](https://omdaa.com) WhatsApp Business API. Wraps [omdaa/omdaa-php](https://github.com/omdaapi/omdaa-sdk/tree/main/packages/omdaa-php).
 
 ## Installation
 
@@ -72,8 +72,8 @@ The `composer.json` includes a path repository pointing to `../omdaa-php`, so th
 
 - PHP 8.1+
 - Laravel 9.x, 10.x or 11.x
-- omdaa/omdaa-php ^1.0
+- omdaa/omdaa-php ^1.1
 
 ## License
 
-MIT
+Apache-2.0
