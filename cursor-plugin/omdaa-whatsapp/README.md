@@ -6,6 +6,7 @@ Free forever WhatsApp MCP server for [Cursor](https://cursor.com). Connect Whats
 - **Docs:** https://omdaa.net/guides/mcp-en.html
 - **API discovery:** `GET https://omdaa.com/api/v1/mcp/info`
 - **API Keys:** https://omdaa.com/dashboard/api-keys
+- **Marketplace namespace:** `@omdaa-api`
 
 ## Install (one click)
 
@@ -39,11 +40,18 @@ Add to `mcp.json`:
 | `get_webhook_config` | Webhook settings for a session |
 | `get_health` | API health check |
 
+## Skills
+
+| Skill | When to use |
+|-------|-------------|
+| `send-whatsapp` | User asks to send WhatsApp, verify numbers, or manage sessions |
+
 ## Publish to Cursor Marketplace
 
 1. Test locally: `ln -s "$(pwd)" ~/.cursor/plugins/local/omdaa-whatsapp` then restart Cursor.
-2. Submit: https://cursor.com/marketplace/publish (repo: `https://github.com/omdaapi/omdaa-sdk`, path: `cursor-plugin/omdaa-whatsapp`)
-3. Community listing: https://cursor.directory/plugins/new
+2. Publisher application: https://cursor.com/marketplace/publish
+3. Repo: `https://github.com/omdaapi/omdaa-sdk` · path: `cursor-plugin/omdaa-whatsapp`
+4. Community listing: https://cursor.directory/plugins/new
 
 ## License
 

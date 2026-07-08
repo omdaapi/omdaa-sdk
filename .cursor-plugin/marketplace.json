@@ -1,0 +1,19 @@
+{
+  "name": "omdaa-api",
+  "owner": {
+    "name": "Omdaa API",
+    "email": "info@omdaa.net"
+  },
+  "metadata": {
+    "description": "Free forever WhatsApp automation — Cursor MCP, SDKs, and integrations by Omdaa API.",
+    "website": "https://omdaa.com",
+    "namespace": "omdaa-api"
+  },
+  "plugins": [
+    {
+      "name": "omdaa-whatsapp",
+      "source": "cursor-plugin/omdaa-whatsapp",
+      "description": "Free Cursor MCP WhatsApp server — Wassenger MCP alternative. Send messages, verify numbers, list sessions."
+    }
+  ]
+}
