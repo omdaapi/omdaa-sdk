@@ -9,7 +9,7 @@ description: Send WhatsApp messages, verify numbers, and manage sessions via Omd
 
 1. **API key** — create at https://omdaa.com/dashboard/api-keys
 2. **Connected session** — scan QR in https://omdaa.com/dashboard/sessions
-3. **MCP server** — `omdaa` must be configured in Cursor (`https://omdaa.com/api/v1/mcp?key=YOUR_API_KEY`)
+3. **MCP server** — `omdaa` in Cursor with `Authorization: Bearer` header (`https://omdaa.com/api/v1/mcp`)
 
 ## Workflow
 

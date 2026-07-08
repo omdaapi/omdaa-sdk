@@ -26,18 +26,23 @@ Free forever WhatsApp MCP server for [Cursor](https://cursor.com). Connect Whats
 
 ## Manual install
 
-Add to Cursor `mcp.json`:
+Add to Cursor `mcp.json` (recommended — key in header, not URL):
 
 ```json
 {
   "mcpServers": {
     "omdaa": {
       "type": "http",
-      "url": "https://omdaa.com/api/v1/mcp?key=YOUR_API_KEY"
+      "url": "https://omdaa.com/api/v1/mcp",
+      "headers": {
+        "Authorization": "Bearer ${env:OMDAA_API_KEY}"
+      }
     }
   }
 }
 ```
+
+Set `OMDAA_API_KEY` in your environment, or paste `Bearer YOUR_API_KEY` directly in `headers`.
 
 ## Components (Open Plugins)
 
