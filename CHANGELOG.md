@@ -8,7 +8,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Added
-- **Cursor MCP WhatsApp plugin** — [cursor-plugin/omdaa-whatsapp/](cursor-plugin/omdaa-whatsapp/) (Wassenger MCP alternative).
+- Registry status badges in README.md / README.ar.md (npm, PyPI, Packagist, Go, n8n).
+- Publish scripts: `publish-python-pypi.sh`, `push-omdaa-php-github.sh`, `push-omdaa-laravel-github.sh`, `submit-packagist.sh`, `tag-go-module.sh`.
+
+### Changed
+- **Go module path** → `github.com/omdaapi/omdaa-sdk/packages/omdaa-go` (tag `packages/omdaa-go/v1.1.1`).
+- **Laravel composer.json** — Packagist-ready (`omdaa/omdaa-php ^1.1`, version 1.1.1).
+- **PHP composer.json** — metadata for Packagist mirror repo.
+
 - **DEVELOPERS.ar.md** — Arabic developer reference.
 - **docs/QUICKSTART-EN.md** — English quick-start guide.
 - GitHub Actions CI (test-js, test-php, test-python, test-go, examples smoke).
