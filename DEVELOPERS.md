@@ -45,10 +45,10 @@ Free HTTP MCP server — alternative to paid Wassenger MCP.
 Install the community node:
 
 ```bash
-npm install @omdaa/n8n-nodes-whatsapp-omdaa
+npm install @omdaapi/n8n-nodes-whatsapp-omdaa
 ```
 
-Or from n8n UI: **Settings → Community Nodes →** `@omdaa/n8n-nodes-whatsapp-omdaa`
+Or from n8n UI: **Settings → Community Nodes →** `@omdaapi/n8n-nodes-whatsapp-omdaa`
 
 - Source: [n8n-nodes-whatsapp-omdaa](https://github.com/omdaapi/n8n-nodes-whatsapp-omdaa)
 - Hosted n8n: [omdaa.com/n8n](https://omdaa.com/n8n/)

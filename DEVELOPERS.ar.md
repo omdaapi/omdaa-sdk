@@ -45,10 +45,10 @@
 تثبيت العقدة المجتمعية:
 
 ```bash
-npm install @omdaa/n8n-nodes-whatsapp-omdaa
+npm install @omdaapi/n8n-nodes-whatsapp-omdaa
 ```
 
-أو من واجهة n8n: **Settings → Community Nodes →** `@omdaa/n8n-nodes-whatsapp-omdaa`
+أو من واجهة n8n: **Settings → Community Nodes →** `@omdaapi/n8n-nodes-whatsapp-omdaa`
 
 - المصدر: [n8n-nodes-whatsapp-omdaa](https://github.com/omdaapi/n8n-nodes-whatsapp-omdaa)
 - n8n مستضاف: [omdaa.com/n8n](https://omdaa.com/n8n/)
