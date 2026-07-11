@@ -31,23 +31,21 @@ jobs:
           fi
 
       - name: Extract changelog section
-        id: notes
+        env:
+          TAG: ${{ steps.tag.outputs.name }}
         run: |
-          TAG="${{ steps.tag.outputs.name }}"
           VER="${TAG#v}"
-          python3 - <<'PY'
-          import pathlib, os, re
-          ver = os.environ.get("VER") or os.environ["TAG"].lstrip("v")
+          python3 - "$VER" <<'PY'
+          import pathlib, re, sys
+          ver = sys.argv[1]
           text = pathlib.Path("CHANGELOG.md").read_text(encoding="utf-8")
           pat = rf"## \[{re.escape(ver)}\].*?(?=\n## |\Z)"
           m = re.search(pat, text, re.S)
           body = m.group(0).strip() if m else f"Release {ver}\n\nSee CHANGELOG.md"
-          pathlib.Path("/tmp/release-body.md").write_text(body + "\n", encoding="utf-8")
-          print(body[:200])
+          body += "\n\nLanding: https://omdaa.com/mcp\n"
+          pathlib.Path("/tmp/release-body.md").write_text(body, encoding="utf-8")
+          print(body[:240])
           PY
-        env:
-          TAG: ${{ steps.tag.outputs.name }}
-          VER: ${{ steps.tag.outputs.name }}
 
       - name: Create GitHub Release
         env:
