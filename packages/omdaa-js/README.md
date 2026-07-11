@@ -58,7 +58,8 @@ try {
 
 - **Messages**: `client.messages.sendText()`, `sendImage()`, `getReceived()`, `getSent()`, `getStats()`, `getByChat()`
 - **Sessions**: `client.sessions.list()`, `create()`, `get()`, `getQr()`, `disconnect()`, `delete()`
-- **Webhooks**: `client.webhooks.get()`, `set()`, `remove()`, `test()`, `getEvents()`, `getStats()`
+- **Webhooks**: `client.webhooks.get()`, `set({ url, secret, events, enabled })`, `remove()`, `test()`, `getEvents()`, `getStats()`
+  - Outbound signature: `X-Webhook-Signature: sha256=<hmac>` over raw body — [verify docs](https://omdaa.net/docs/webhooks.html#verify-signature)
 
 Authentication uses **Bearer** with your API Key (or JWT). Get your API key from the Omdaa dashboard under API Keys.
 

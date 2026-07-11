@@ -86,7 +86,7 @@ API الإنتاج: `https://omdaa.com/api/v1` · التوثيق: `https://omdaa
 }
 ```
 
-**أدوات MCP v1.2 (10):** `list_sessions` · `create_session` · `get_qr` · `get_session_status` · `send_text_message` · `send_media` · `send_buttons` · `check_whatsapp_number` · `get_webhook_config` · `get_health`
+**أدوات MCP v2.0 (43):** تحكم كامل بالحساب — جلسات · رسائل · وارد · webhooks · ملف شخصي/إحصائيات · تكاملات · مفاتيح API. انظر [دليل البلجن](cursor-plugin/omdaa-whatsapp/README.md).
 
 ---
 

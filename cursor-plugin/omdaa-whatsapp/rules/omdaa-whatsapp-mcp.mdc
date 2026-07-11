@@ -1,16 +1,24 @@
 ---
-description: Use Omdaa WhatsApp MCP v1.2 tools for messaging automation
+description: Use Omdaa WhatsApp MCP v2.0 tools for full account control
 globs:
 alwaysApply: false
 ---
 
 # Omdaa WhatsApp MCP
 
-When the user asks about WhatsApp messaging, sessions, QR linking, media, buttons, number checks, or webhooks:
+When the user asks about WhatsApp messaging, sessions, QR linking, media, buttons, number checks, webhooks, profile, integrations, geo links, or account stats:
 
 1. Use the `omdaa` MCP server with `Authorization: Bearer YOUR_API_KEY` (get key from https://omdaa.com/dashboard/api-keys).
-2. Available tools (v1.2): `list_sessions`, `create_session`, `get_qr`, `get_session_status`, `send_text_message`, `send_media`, `send_buttons`, `check_whatsapp_number`, `get_webhook_config`, `get_health`.
+2. Available tools (v2.0 — full account control):
+   - Sessions: `list_sessions`, `create_session`, `get_qr`, `regenerate_qr`, `get_session_status`, `delete_session`, `logout_session`, `pause_session`
+   - Messaging: `send_text_message`, `send_media`, `send_buttons`, `check_whatsapp_number`
+   - Inbox: `list_chats`, `get_messages`, `search_messages`, `list_contacts`
+   - Webhooks: `get_webhook_config`, `set_webhook`, `test_webhook`, `remove_webhook`, `list_webhook_events`, `get_webhook_stats`
+   - Account: `get_profile`, `update_profile`, `get_account_stats`, `get_mcp_usage`, `get_health`
+   - Integrations: `list_integrations`, `list_openai_bots`, `upsert_openai_bot`, `test_openai_bot`, `list_n8n_bots`, `upsert_n8n_bot`, `test_n8n_bot`, `get_free_api_config`, `get_free_outbox_stats`, `list_geo_links`, `create_geo_link`, `delete_geo_link`
+   - API keys: `list_api_keys` (safe); `create_api_key` / `revoke_api_key` / `rotate_api_key` require **JWT** (not API key)
 3. For sending messages, a connected `sessionId` is required — use `create_session` + `get_qr` or dashboard QR scan first.
-4. Omdaa API is **free forever** — docs: https://omdaa.net/guides/mcp-en.html · landing: https://omdaa.com/mcp
+4. Destructive tools require `confirm: true` (`delete_session`, `remove_webhook`, `delete_geo_link`, `revoke_api_key`).
+5. Omdaa API is **free forever** — docs: https://omdaa.net/guides/mcp-en.html · landing: https://omdaa.com/mcp
 
 Never invent API keys. Never put secrets in URLs. If missing, direct the user to create one at https://omdaa.com/dashboard/api-keys.

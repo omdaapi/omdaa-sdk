@@ -1,57 +1,49 @@
 ---
 name: send-whatsapp
-description: Send WhatsApp messages (text, media, buttons), create sessions, get QR, verify numbers, and manage sessions via Omdaa MCP v1.2. Use when the user asks to message on WhatsApp, link a session, or check numbers.
+description: Control Omdaa WhatsApp and account via MCP v2.0 — sessions, QR, send text/media/buttons, inbox, webhooks, integrations, profile, stats. Use when the user asks about WhatsApp messaging or Omdaa account control from Cursor.
 ---
 
-# Send WhatsApp via Omdaa MCP
+# Omdaa MCP v2.0 — WhatsApp + full account control
 
 ## Prerequisites
 
 1. **API key** — create at https://omdaa.com/dashboard/api-keys
-2. **MCP server** — `omdaa` in Cursor with `Authorization: Bearer` header (`https://omdaa.com/api/v1/mcp`)
-3. **Connected session** — via `create_session` + `get_qr`, or scan QR in https://omdaa.com/dashboard/sessions
+2. **MCP server** — `omdaa` in Cursor with `Authorization: Bearer` (`https://omdaa.com/api/v1/mcp`)
+3. **Connected session** (for send) — `create_session` + `get_qr`, or dashboard QR
 
-## Workflow
+## Workflows
 
 ### Link a new WhatsApp session
 
-1. Call `create_session` with optional `deviceName`.
-2. Wait 2–5 seconds, then call `get_qr` with the returned `sessionId`.
-3. User scans QR in WhatsApp → Linked Devices.
-4. Call `get_session_status` until `connected` is true.
+1. `create_session` (optional `deviceName`)
+2. Wait 2–5s → `get_qr` / `regenerate_qr`
+3. User scans QR → Linked Devices
+4. `get_session_status` until `connected`
 
-### Send a text message
+### Send messages
 
-1. Call `list_sessions` to find a connected `sessionId`.
-2. Call `send_text_message` with `sessionId`, `to` (E.164, e.g. `966501234567`), and `message`.
-3. Confirm delivery result to the user.
+- Text: `send_text_message` (`sessionId`, `to`, `message`)
+- Media: `send_media` (`type` + `mediaUrl` or `mediaBase64`)
+- Buttons: `send_buttons` (max 3)
+- Verify numbers: `check_whatsapp_number`
 
-### Send media
+### Inbox
 
-1. Use a connected `sessionId`.
-2. Call `send_media` with `to`, `type` (`image`|`video`|`audio`|`document`), and `mediaUrl` or `mediaBase64`.
-3. Optional: `caption`, `fileName`, `mimetype`.
+- `list_chats` · `get_messages` · `search_messages` · `list_contacts`
 
-### Send buttons
+### Session lifecycle
 
-1. Use a connected `sessionId`.
-2. Call `send_buttons` with `to`, `title` (or `text`), and `buttons` array (max 3 reply buttons).
-3. Optional: `description`, `footer`, `thumbnailUrl`.
+- `delete_session` / `logout_session` / `pause_session` — destructive deletes need `confirm: true`
 
-### Verify a number
+### Webhooks & account
 
-1. Call `check_whatsapp_number` with `sessionId` and `numbers` array.
-2. Report which numbers exist on WhatsApp.
+- Webhooks: `get_webhook_config` · `set_webhook` · `test_webhook` · `remove_webhook`
+- Profile/stats: `get_profile` · `update_profile` · `get_account_stats` · `get_mcp_usage`
+- Integrations: `list_integrations` · Omdaa AI / n8n / Free API / Geo tools
+- API keys: `list_api_keys` OK with API key; create/revoke/rotate need **JWT**
 
-### Session or webhook info
+## Notes
 
-- `get_session_status` — connection state for one session
-- `get_webhook_config` — webhook URL/events for a session
-- `get_health` — API availability
-
-## Rules
-
-- Never invent API keys or session IDs.
-- Use `Authorization: Bearer` header — do not put API keys in the MCP URL.
-- Omdaa API is **free forever** — docs: https://omdaa.net/guides/mcp-en.html
-- If MCP is not connected, guide the user to install from https://omdaa.com/mcp (Add to Cursor).
+- Free forever — https://omdaa.com/mcp
+- Docs: https://omdaa.net/guides/mcp-en.html · AR: https://omdaa.net/guides/mcp-ar.html
+- If MCP is not connected, guide install from https://omdaa.com/mcp

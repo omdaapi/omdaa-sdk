@@ -7,6 +7,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.0.0] - 2026-07-11
+
+### Added
+- **Cursor MCP v2.0.0 — full account control (43 tools):**
+  - Sessions: `delete_session`, `logout_session`, `pause_session`, `regenerate_qr`
+  - Inbox: `list_chats`, `get_messages`, `search_messages`, `list_contacts`
+  - Webhooks: `set_webhook`, `test_webhook`, `remove_webhook`, `list_webhook_events`, `get_webhook_stats`
+  - Account: `get_profile`, `update_profile`, `get_account_stats`, `get_mcp_usage`
+  - Integrations: Omdaa AI / n8n / Free API / Geo Links tools
+  - API keys: `list_api_keys`; `create_api_key` / `revoke_api_key` / `rotate_api_key` (JWT only)
+- Destructive tools require `confirm: true`
+- QR image responses use `Cross-Origin-Resource-Policy: cross-origin` for chat embedding
+
+### Changed
+- Cursor plugin bumped to **2.0.0** — README, skill, rules, marketplace manifest
+- MCP health payload reports `mcp: 2.0.0` and tool count
+
 ## [1.2.0] - 2026-07-08
 
 ### Added

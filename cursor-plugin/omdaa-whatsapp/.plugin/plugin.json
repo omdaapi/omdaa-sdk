@@ -1,7 +1,7 @@
 {
   "name": "omdaa-whatsapp",
-  "version": "1.2.0",
-  "description": "Free forever WhatsApp MCP for Cursor — sessions, QR, text/media/buttons, number check, webhooks. Secure Bearer auth via Omdaa API.",
+  "version": "2.0.0",
+  "description": "Free forever WhatsApp MCP for Cursor — full account control: sessions, messaging, inbox, webhooks, integrations, profile. Secure Bearer auth. 43 tools.",
   "author": {
     "name": "Omdaa API",
     "email": "info@omdaa.net",

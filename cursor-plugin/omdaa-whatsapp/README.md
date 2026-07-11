@@ -2,7 +2,7 @@
 
 Free forever WhatsApp MCP server for [Cursor](https://cursor.com). Connect WhatsApp to your AI assistant: create sessions, scan QR, send text/media/buttons, verify numbers, and manage webhooks.
 
-**Wassenger MCP alternative** — no Enterprise plan required · **MCP v1.2.0** · **10 tools** · **Secure Bearer auth**
+**Wassenger MCP alternative** — no Enterprise plan required · **MCP v2.0.0** · **43 tools** · **Full account control** · **Secure Bearer auth**
 
 | Resource | Link |
 |----------|------|
@@ -51,20 +51,27 @@ Add to Cursor `mcp.json`:
 | Rule | `omdaa-whatsapp-mcp` | Guides the agent to use Omdaa tools correctly |
 | Skill | `send-whatsapp` | Workflow for sessions, send, media, buttons, verify |
 
-## Tools (v1.2.0)
+## Tools (v2.0.0 — 43)
 
-| Tool | Description |
-|------|-------------|
-| `list_sessions` | List WhatsApp sessions |
-| `create_session` | Create a new session |
-| `get_qr` | Get QR code to link WhatsApp |
-| `get_session_status` | Connection status for a session |
-| `send_text_message` | Send a text message |
-| `send_media` | Send image/video/audio/document (URL or base64) |
-| `send_buttons` | Send interactive buttons (up to 3) |
-| `check_whatsapp_number` | Verify if numbers are on WhatsApp |
-| `get_webhook_config` | Webhook settings for a session |
-| `get_health` | API health check |
+| Area | Tools |
+|------|-------|
+| Sessions | `list_sessions` · `create_session` · `get_qr` · `regenerate_qr` · `get_session_status` · `delete_session` · `logout_session` · `pause_session` |
+| Messaging | `send_text_message` · `send_media` · `send_buttons` · `check_whatsapp_number` |
+| Inbox | `list_chats` · `get_messages` · `search_messages` · `list_contacts` |
+| Webhooks | `get_webhook_config` · `set_webhook` · `test_webhook` · `remove_webhook` · `list_webhook_events` · `get_webhook_stats` |
+| Account | `get_profile` · `update_profile` · `get_account_stats` · `get_mcp_usage` · `get_health` |
+| Integrations | Omdaa AI · n8n · Free API · Geo Links |
+| API keys | `list_api_keys` · create/revoke/rotate (**JWT only**) |
+
+Destructive tools require `confirm: true`.
+
+## Production check (2026-07-11)
+
+Verified against `https://omdaa.com/api/v1/mcp`:
+
+- `get_health` → healthy · MCP `2.0.0` · 43 tools
+- `get_profile` / `list_integrations` / `list_api_keys` → OK
+- `create_api_key` via API key → correctly rejected (JWT required)
 
 ## Local test (developers)
 

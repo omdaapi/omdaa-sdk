@@ -86,7 +86,7 @@ Connect WhatsApp to **Cursor** with one click — send messages, verify numbers,
 }
 ```
 
-**MCP v1.2 tools (10):** `list_sessions` · `create_session` · `get_qr` · `get_session_status` · `send_text_message` · `send_media` · `send_buttons` · `check_whatsapp_number` · `get_webhook_config` · `get_health`
+**MCP v2.0 tools (43):** full account control — sessions lifecycle · messaging · inbox · webhooks · profile/stats · Omdaa AI / n8n / Free API / Geo · API keys (JWT for create/revoke). See [cursor-plugin README](cursor-plugin/omdaa-whatsapp/README.md).
 
 ---
 
