@@ -1,0 +1,32 @@
+name: Packagist
+
+on:
+  push:
+    branches: [main, master]
+    tags: ['v*', '*.*.*']
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Notify Packagist
+        env:
+          PACKAGIST_USER: ${{ secrets.PACKAGIST_USER }}
+          PACKAGIST_TOKEN: ${{ secrets.PACKAGIST_TOKEN }}
+        run: |
+          set -euo pipefail
+          REPO_URL="https://github.com/${GITHUB_REPOSITORY}"
+          if [[ -z "${PACKAGIST_USER:-}" || -z "${PACKAGIST_TOKEN:-}" ]]; then
+            echo "::warning::PACKAGIST_USER / PACKAGIST_TOKEN secrets missing — skipping auto-update"
+            echo "Add secrets from https://packagist.org/profile/"
+            echo "Or enable Packagist GitHub Auto-Update on the package page."
+            exit 0
+          fi
+          HTTP=$(curl -sS -o /tmp/packagist.json -w "%{http_code}" \
+            -X POST "https://packagist.org/api/update-package?username=${PACKAGIST_USER}&apiToken=${PACKAGIST_TOKEN}" \
+            -H "Content-Type: application/json" \
+            -d "{\"repository\":{\"url\":\"${REPO_URL}\"}}")
+          echo "Packagist HTTP ${HTTP}"
+          cat /tmp/packagist.json || true
+          [[ "$HTTP" == "200" || "$HTTP" == "201" || "$HTTP" == "202" ]]
